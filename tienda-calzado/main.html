@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Inicio • CalzaSmart</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header>
+  <div class="brand">CalzaSmart</div>
+  <nav>
+    <a href="main.html">Inicio</a>
+    <a href="catalogo.html">Catálogo</a>
+    <a href="producto-crud.html">CRUD Productos</a>
+    <a href="producto-crear.html">Crear Producto</a>
+    <a href="publicidad.html">Publicidad</a>
+    <a href="metricas.html">Métricas</a>
+    <a href="gestion.html">Gestión</a>
+    <a href="contacto.html">Contacto</a>
+    <a href="login.html" class="login-link">Login</a>
+  </nav>
+  <button id="toggle-theme">
+    <img src="imagenes/logoluna.png" alt="Cambiar tema" width="30">
+  </button>
+</header>
+
+<main class="container">
+
+  <section class="grid cols-3">
+    <div class="card kpi">
+      <div class="label">Ventas (hoy)</div>
+      <div class="value">S/ 1,284</div>
+      <div class="tag">Objetivo: reportería</div>
+    </div>
+    <div class="card kpi">
+      <div class="label">Suscriptores activos</div>
+      <div class="value">312</div>
+      <div class="tag">Beneficio: descuentos</div>
+    </div>
+    <div class="card kpi">
+      <div class="label">Ticket promedio</div>
+      <div class="value">S/ 156.40</div>
+      <div class="tag">Estimado</div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>Acciones rápidas</h2>
+    <div class="grid cols-4">
+      <a class="btn" href="producto-crear.html">Nuevo producto</a>
+      <a class="btn secondary" href="producto-crud.html">Gestionar productos</a>
+      <a class="btn secondary" href="catalogo.html">Ver catálogo</a>
+      <a class="btn secondary" href="metricas.html">Ver métricas</a>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>Descuentos por suscripción</h2>
+    <p>Los clientes suscritos reciben un <strong>10% de descuento base</strong> y promociones especiales por temporada.</p>
+    <ul>
+      <li>Descuento base suscrito: 10%</li>
+      <li>Promo temporada (suscrito): 15% en zapatillas running</li>
+      <li>Clientes no suscritos: 0-5% según campaña</li>
+    </ul>
+    <p class="tag">La lógica se implementará con Spring + Thymeleaf.</p>
+  </section>
+
+</main>
+<footer>CalzaSmart • Proyecto Ingeniería de Sistemas (Semana 4) — Maqueta HTML</footer>
+<script src="main.js"></script>
+</body>
+</html>
