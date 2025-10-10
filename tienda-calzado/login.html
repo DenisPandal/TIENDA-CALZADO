@@ -1,50 +1,58 @@
 <!doctype html>
 <html lang="es">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
-<header>
-  <div class="brand">CalzaSmart</div>
-  <nav>
-    <a href="main.html">Inicio</a>
-    <a href="catalogo.html">Catálogo</a>
-    <a href="producto-crud.html">CRUD Productos</a>
-    <a href="producto-crear.html">Crear Producto</a>
-    <a href="publicidad.html">Publicidad</a>
-    <a href="metricas.html">Métricas</a>
-    <a href="gestion.html">Gestión</a>
-    <a href="contacto.html">Contacto</a>
-    <a href="login.html" class="login-link">Login</a>
-  </nav>
-  <button id="toggle-theme">
-    <img src="imagenes/logoluna.png" alt="Cambiar tema" width="30">
-  </button>
-</header>
+  <header>
+    <div class="brand">CalzaSmart</div>
+    <nav>
+      <a href="main.html">Inicio</a>
+      <a href="catalogo.html">Catálogo</a>
+      <a href="producto-crud.html">CRUD Productos</a>
+      <a href="producto-crear.html">Crear Producto</a>
+      <a href="publicidad.html">Publicidad</a>
+      <a href="metricas.html">Métricas</a>
+      <a href="gestion.html">Gestión</a>
+      <a href="contacto.html">Contacto</a>
+      <a href="cliente-nuevo.html">Clientes</a>
+      <a href="adicional2.html">Sucursales</a>
+      <a href="adicional3.html">Preguntas</a>
+      <a href="suscripciones.html">Suscripciones</a>
 
-<main class="container">
+    </nav>
+    <button id="toggle-theme">
+      <img src="imagenes/logoluna.png" alt="Cambiar tema" width="30">
+    </button>
+  </header>
 
-  <section class="panel" style="max-width:520px;margin:40px auto">
-    <h1>Ingreso al sistema</h1>
-    <p class="tag">Requisito: Control de acceso (maqueta)</p>
-    <form>
-      <label for="email">Correo institucional</label>
-      <input id="email" type="email" placeholder="tucorreo@ejemplo.com" required>
-      <label for="password" style="margin-top:10px">Contraseña</label>
-      <input id="password" type="password" placeholder="••••••••" required>
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px">
-        <label style="display:flex;gap:8px;align-items:center"><input type="checkbox"> Recordarme</label>
-        <a class="btn" href="main.html">Entrar</a>
-      </div>
-      <p style="margin-top:10px;color:var(--muted)">* Maqueta sin autenticación; validación real con Spring Security.</p>
-    </form>
-  </section>
+  <main class="container">
 
-</main>
-<footer>CalzaSmart • Proyecto Ingeniería de Sistemas (Semana 4) — Maqueta HTML</footer>
-<script src="main.js"></script>
+    <section class="panel" style="max-width:520px;margin:40px auto">
+      <h1>Ingreso al sistema</h1>
+      <p class="tag">Requisito: Control de acceso (maqueta)</p>
+      <form>
+        <label for="email">Correo institucional</label>
+        <input id="email" type="email" placeholder="tucorreo@ejemplo.com" required>
+        <label for="password" style="margin-top:10px">Contraseña</label>
+        <input id="password" type="password" placeholder="••••••••" required>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px">
+          <label style="display:flex;gap:8px;align-items:center"><input type="checkbox"> Recordarme</label>
+          <a class="btn" href="main.html">Entrar</a>
+        </div>
+        <p style="margin-top:10px;color:var(--muted)">* Maqueta sin autenticación; validación real con Spring Security.
+        </p>
+      </form>
+    </section>
+
+  </main>
+  <footer>CalzaSmart • Proyecto Ingeniería de Sistemas (Semana 4) — Maqueta HTML</footer>
+  <script src="main.js"></script>
 </body>
+
 </html>
