@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Planes de Suscripción • CalzaSmart</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="brand">CalzaSmart</div>
+        <nav>
+            <a href="main.html">Inicio</a>
+            <a href="catalogo.html">Catálogo</a>
+            <a href="producto-crud.html">CRUD Productos</a>
+            <a href="producto-crear.html">Crear Producto</a>
+            <a href="publicidad.html">Publicidad</a>
+            <a href="metricas.html">Métricas</a>
+            <a href="gestion.html">Gestión</a>
+            <a href="cliente-nuevo.html">Clientes</a>
+            <a href="suscripciones.html">Suscripciones</a>
+            <a href="contacto.html">Contacto</a>
+            <a href="adicional2.html">Sucursales</a>
+            <a href="adicional3.html">Preguntas</a>
+            <a href="login.html" class="login-link">Login</a>
+        </nav>
+        <button id="toggle-theme">
+            <img src="imagenes/logoluna.png" alt="Cambiar tema" width="30">
+        </button>
+    </header>
+
+    <main class="container">
+
+        <section class="panel">
+            <h1>Planes de Suscripción</h1>
+            <p class="tag">Sistema de beneficios y descuentos automáticos</p>
+            <p style="margin-top: 12px; color: var(--muted);">
+                Los clientes suscritos reciben descuentos automáticos al momento de realizar sus compras.
+                El sistema detecta el plan mediante el DNI y aplica el beneficio correspondiente.
+            </p>
+        </section>
+
+        <!-- Estadísticas de Suscripciones -->
+        <section class="grid cols-4">
+            <div class="card kpi-modern">
+                <div class="kpi-value">89</div>
+                <div class="kpi-label">Total Suscritos</div>
+                <div class="tag" style="margin-top: 8px;">57% de clientes</div>
+            </div>
+            <div class="card kpi-modern">
+                <div class="kpi-value">32</div>
+                <div class="kpi-label">Plan Básico</div>
+                <div class="tag" style="margin-top: 8px;">36%</div>
+            </div>
+            <div class="card kpi-modern">
+                <div class="kpi-value">45</div>
+                <div class="kpi-label">Plan Premium</div>
+                <div class="tag" style="margin-top: 8px;">51%</div>
+            </div>
+            <div class="card kpi-modern">
+                <div class="kpi-value">12</div>
+                <div class="kpi-label">Plan VIP</div>
+                <div class="tag" style="margin-top: 8px;">13%</div>
+            </div>
+        </section>
+
+        <!-- Planes Disponibles -->
+        <section class="panel">
+            <h2>Planes Disponibles</h2>
+            <p style="color: var(--muted); margin-bottom: 24px;">
+                Elige el plan que mejor se adapte a las necesidades de tus clientes
+            </p>
+
+            <div class="grid cols-3">
+                <!-- Plan Básico -->
+                <div class="card plan-card">
+                    <div style="text-align: center;">
+                        <h3 style="color: var(--info); font-size: 1.5rem; margin-bottom: 8px;">Plan Básico</h3>
+                        <div class="plan-price">5%</div>
+                        <p style="color: var(--muted); margin-bottom: 20px;">Descuento permanente</p>
+                    </div>
+
+                    <ul class="plan-features">
+                        <li>5% de descuento en todas las compras</li>
+                        <li>Acceso a promociones mensuales</li>
+                        <li>Acumulación de puntos</li>
+                        <li>Soporte prioritario por email</li>
+                        <li>Notificaciones de nuevos productos</li>
+                    </ul>
+
+                    <div style="text-align: center; padding-top: 16px; border-top: 2px solid var(--accent);">
+                        <div style="font-size: 1.8rem; font-weight: 800; color: var(--accent);">S/ 29.90</div>
+                        <div style="color: var(--muted); font-size: 0.9rem;">por mes</div>
+                    </div>
+                </div>
+
+                <!-- Plan Premium -->
+                <div class="card plan-card plan-popular">
+                    <div class="plan-badge">Más Popular</div>
+                    <div style="text-align: center;">
+                        <h3 style="color: var(--ok); font-size: 1.5rem; margin-bottom: 8px;">Plan Premium</h3>
+                        <div class="plan-price" style="color: var(--ok);">10%</div>
+                        <p style="color: var(--muted); margin-bottom: 20px;">Mayor ahorro garantizado</p>
+                    </div>
+
+                    <ul class="plan-features">
+                        <li>10% de descuento permanente</li>
+                        <li>Promociones exclusivas semanales</li>
+                        <li>Doble acumulación de puntos</li>
+                        <li>Soporte prioritario 24/7</li>
+                        <li>Envío gratis en Lima Metropolitana</li>
+                        <li>Acceso anticipado a liquidaciones</li>
+                        <li>Regalo de cumpleaños</li>
+                    </ul>
+
+                    <div style="text-align: center; padding-top: 16px; border-top: 2px solid var(--ok);">
+                        <div style="font-size: 1.8rem; font-weight: 800; color: var(--ok);">S/ 49.90</div>
+                        <div style="color: var(--muted); font-size: 0.9rem;">por mes</div>
+                    </div>
+                </div>
+
+                <!-- Plan VIP -->
+                <div class="card plan-card">
+                    <div style="text-align: center;">
+                        <h3 style="color: var(--warn); font-size: 1.5rem; margin-bottom: 8px;">Plan VIP</h3>
+                        <div class="plan-price" style="color: var(--warn);">15%</div>
+                        <p style="color: var(--muted); margin-bottom: 20px;">Beneficios exclusivos</p>
+                    </div>
+
+                    <ul class="plan-features">
+                        <li>15% de descuento permanente</li>
+                        <li>Acceso VIP a todas las promociones</li>
+                        <li>Triple acumulación de puntos</li>
+                        <li>Asesor personal de compras</li>
+                        <li>Envío express gratis a nivel nacional</li>
+                        <li>Acceso anticipado a nuevas colecciones</li>
+                        <li>Eventos exclusivos para miembros VIP</li>
+                        <li>Regalo mensual sorpresa</li>
+                        <li>Descuentos adicionales en cumpleaños</li>
+                    </ul>
+
+                    <div style="text-align: center; padding-top: 16px; border-top: 2px solid var(--warn);">
+                        <div style="font-size: 1.8rem; font-weight: 800; color: var(--warn);">S/ 79.90</div>
+                        <div style="color: var(--muted); font-size: 0.9rem;">por mes</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comparativa de Planes -->
+        <section class="panel">
+            <h2>Comparativa de Beneficios</h2>
+            <table style="margin-top: 20px;">
+                <thead>
+                    <tr>
+                        <th>Beneficio</th>
+                        <th style="text-align: center;">Básico</th>
+                        <th style="text-align: center;">Premium</th>
+                        <th style="text-align: center;">VIP</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Descuento permanente</td>
+                        <td style="text-align: center;">5%</td>
+                        <td style="text-align: center;">10%</td>
+                        <td style="text-align: center;">15%</td>
+                    </tr>
+                    <tr>
+                        <td>Acumulación de puntos</td>
+                        <td style="text-align: center;">x1</td>
+                        <td style="text-align: center;">x2</td>
+                        <td style="text-align: center;">x3</td>
+                    </tr>
+                    <tr>
+                        <td>Envío gratis Lima</td>
+                        <td style="text-align: center;">❌</td>
+                        <td style="text-align: center;">✅</td>
+                        <td style="text-align: center;">✅</td>
+                    </tr>
+                    <tr>
+                        <td>Envío gratis Nacional</td>
+                        <td style="text-align: center;">❌</td>
+                        <td style="text-align: center;">❌</td>
+                        <td style="text-align: center;">✅</td>
+                    </tr>
+                    <tr>
+                        <td>Soporte prioritario</td>
+                        <td style="text-align: center;">Email</td>
+                        <td style="text-align: center;">24/7</td>
+                        <td style="text-align: center;">Personal</td>
+                    </tr>
+                    <tr>
+                        <td>Acceso anticipado</td>
+                        <td style="text-align: center;">❌</td>
+                        <td style="text-align: center;">✅</td>
+                        <td style="text-align: center;">✅✅</td>
+                    </tr>
+                    <tr>
+                        <td>Regalos</td>
+                        <td style="text-align: center;">❌</td>
+                        <td style="text-align: center;">Cumpleaños</td>
+                        <td style="text-align: center;">Mensual</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Información Adicional -->
+        <section class="grid cols-2">
+            <div class="panel">
+                <h3>¿Cómo funciona?</h3>
+                <ol style="line-height: 1.8; color: var(--muted);">
+                    <li>El cliente elige su plan de suscripción</li>
+                    <li>Se registra su DNI en el sistema</li>
+                    <li>En cada compra, al ingresar su DNI, el descuento se aplica automáticamente</li>
+                    <li>El cliente ve su beneficio reflejado en tiempo real</li>
+                    <li>Los puntos se acumulan según el plan</li>
+                </ol>
+            </div>
+
+            <div class="panel">
+                <h3>Ventajas para el Negocio</h3>
+                <ul style="line-height: 1.8; color: var(--muted); list-style: none;">
+                    <li>✓ Aumenta la fidelización de clientes</li>
+                    <li>✓ Incrementa la frecuencia de compra</li>
+                    <li>✓ Genera ingresos recurrentes mensuales</li>
+                    <li>✓ Mejora el ticket promedio de venta</li>
+                    <li>✓ Base de datos de clientes más completa</li>
+                    <li>✓ Marketing dirigido más efectivo</li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>CalzaSmart • Sistema de Ventas con Gestión de Suscripciones</footer>
+    <script src="main.js"></script>
+</body>
+
+</html>
