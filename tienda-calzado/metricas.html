@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="es">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -9,69 +10,86 @@
 
 <body>
 
-<header>
-  <div class="brand">CalzaSmart</div>
-  <nav>
-    <a href="main.html">Inicio</a>
-    <a href="catalogo.html">Catálogo</a>
-    <a href="producto-crud.html">CRUD Productos</a>
-    <a href="producto-crear.html">Crear Producto</a>
-    <a href="publicidad.html">Publicidad</a>
-    <a href="metricas.html">Métricas</a>
-    <a href="gestion.html">Gestión</a>
-    <a href="contacto.html">Contacto</a>
-    <a href="login.html" class="login-link">Login</a>
-  </nav>
-  <button id="toggle-theme">
-    <img src="imagenes/logoluna.png" alt="Cambiar tema" width="30">
-  </button>
-</header>
+  <header>
+    <div class="brand">CalzaSmart</div>
+    <nav>
+      <a href="main.html">Inicio</a>
+      <a href="catalogo.html">Catálogo</a>
+      <a href="producto-crud.html">CRUD Productos</a>
+      <a href="producto-crear.html">Crear Producto</a>
+      <a href="publicidad.html">Publicidad</a>
+      <a href="metricas.html">Métricas</a>
+      <a href="gestion.html">Gestión</a>
+      <a href="contacto.html">Contacto</a>
+      <a href="cliente-nuevo.html">Clientes</a>
+      <a href="suscripciones.html">Suscripciones</a>
+      <a href="adicional2.html">Sucursales</a>
+      <a href="adicional3.html">Preguntas</a>
+      <a href="login.html" class="login-link">Login</a>
+    </nav>
+    <button id="toggle-theme">
+      <img src="imagenes/logoluna.png" alt="Cambiar tema" width="30">
+    </button>
+  </header>
 
-<main class="container">
+  <main class="container">
 
-  <section class="grid cols-3">
-    <div class="card kpi"><div class="label">Ventas hoy</div><div class="value">S/ 1,284</div><div class="tag">KPI 1</div></div>
-    <div class="card kpi"><div class="label">Tasa de suscripción</div><div class="value">28%</div><div class="tag">KPI 2</div></div>
-    <div class="card kpi"><div class="label">Descuento promedio</div><div class="value">12%</div><div class="tag">KPI 3</div></div>
-  </section>
-  <section class="panel">
-    <h2>Gráfico</h2>
-    <p class="tag">SVG estático (cumple “hay un gráfico” sin usar JS).</p>
-    
-<svg viewBox="0 0 520 220" width="100%" height="220" role="img" aria-label="Ventas semanales">
-  <rect x="0" y="0" width="520" height="220" fill="none" stroke="#30363d"/>
-  <text x="14" y="20" fill="#8b949e" font-size="12">Ventas por semana (S/)</text>
-  <line x1="40" y1="190" x2="500" y2="190" stroke="#30363d"/>
-  <line x1="40" y1="30" x2="40" y2="190" stroke="#30363d"/>
-  <text x="10" y="190" fill="#8b949e" font-size="10">0</text>
-  <text x="2"  y="150" fill="#8b949e" font-size="10">500</text>
-  <text x="2"  y="110" fill="#8b949e" font-size="10">1000</text>
-  <text x="2"  y="70"  fill="#8b949e" font-size="10">1500</text>
-  <text x="2"  y="30"  fill="#8b949e" font-size="10">2000</text>
-  <g fill="#2f81f7">
-    <rect x="60"  y="130" width="40" height="60"></rect>
-    <rect x="120" y="100" width="40" height="90"></rect>
-    <rect x="180" y="80"  width="40" height="110"></rect>
-    <rect x="240" y="60"  width="40" height="130"></rect>
-    <rect x="300" y="95"  width="40" height="95"></rect>
-    <rect x="360" y="120" width="40" height="70"></rect>
-    <rect x="420" y="85"  width="40" height="105"></rect>
-  </g>
-  <g fill="#8b949e" font-size="10">
-    <text x="63"  y="205">Sem 1</text>
-    <text x="123" y="205">Sem 2</text>
-    <text x="183" y="205">Sem 3</text>
-    <text x="243" y="205">Sem 4</text>
-    <text x="303" y="205">Sem 5</text>
-    <text x="363" y="205">Sem 6</text>
-    <text x="423" y="205">Sem 7</text>
-  </g>
-</svg>
+    <section class="grid cols-3">
+      <div class="card kpi">
+        <div class="label">Ventas hoy</div>
+        <div class="value">S/ 1,284</div>
+        <div class="tag">KPI 1</div>
+      </div>
+      <div class="card kpi">
+        <div class="label">Tasa de suscripción</div>
+        <div class="value">28%</div>
+        <div class="tag">KPI 2</div>
+      </div>
+      <div class="card kpi">
+        <div class="label">Descuento promedio</div>
+        <div class="value">12%</div>
+        <div class="tag">KPI 3</div>
+      </div>
+    </section>
+    <section class="panel">
+      <h2>Gráfico</h2>
+      <p class="tag">SVG estático (cumple “hay un gráfico” sin usar JS).</p>
 
-  </section>
+      <svg viewBox="0 0 520 220" width="100%" height="220" role="img" aria-label="Ventas semanales">
+        <rect x="0" y="0" width="520" height="220" fill="none" stroke="#30363d" />
+        <text x="14" y="20" fill="#8b949e" font-size="12">Ventas por semana (S/)</text>
+        <line x1="40" y1="190" x2="500" y2="190" stroke="#30363d" />
+        <line x1="40" y1="30" x2="40" y2="190" stroke="#30363d" />
+        <text x="10" y="190" fill="#8b949e" font-size="10">0</text>
+        <text x="2" y="150" fill="#8b949e" font-size="10">500</text>
+        <text x="2" y="110" fill="#8b949e" font-size="10">1000</text>
+        <text x="2" y="70" fill="#8b949e" font-size="10">1500</text>
+        <text x="2" y="30" fill="#8b949e" font-size="10">2000</text>
+        <g fill="#2f81f7">
+          <rect x="60" y="130" width="40" height="60"></rect>
+          <rect x="120" y="100" width="40" height="90"></rect>
+          <rect x="180" y="80" width="40" height="110"></rect>
+          <rect x="240" y="60" width="40" height="130"></rect>
+          <rect x="300" y="95" width="40" height="95"></rect>
+          <rect x="360" y="120" width="40" height="70"></rect>
+          <rect x="420" y="85" width="40" height="105"></rect>
+        </g>
+        <g fill="#8b949e" font-size="10">
+          <text x="63" y="205">Sem 1</text>
+          <text x="123" y="205">Sem 2</text>
+          <text x="183" y="205">Sem 3</text>
+          <text x="243" y="205">Sem 4</text>
+          <text x="303" y="205">Sem 5</text>
+          <text x="363" y="205">Sem 6</text>
+          <text x="423" y="205">Sem 7</text>
+        </g>
+      </svg>
 
-</main>
-<footer>CalzaSmart • Proyecto Ingeniería de Sistemas (Semana 4) — Maqueta HTML</footer>
-<script src="main.js"></script>
+    </section>
+
+  </main>
+  <footer>CalzaSmart • Proyecto Ingeniería de Sistemas (Semana 4) — Maqueta HTML</footer>
+  <script src="main.js"></script>
 </body>
+
 </html>
