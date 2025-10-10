@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Nuevo Cliente • CalzaSmart</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="brand">CalzaSmart</div>
+        <nav>
+            <a href="main.html">Inicio</a>
+            <a href="catalogo.html">Catálogo</a>
+            <a href="producto-crud.html">CRUD Productos</a>
+            <a href="producto-crear.html">Crear Producto</a>
+            <a href="publicidad.html">Publicidad</a>
+            <a href="metricas.html">Métricas</a>
+            <a href="gestion.html">Gestión</a>
+            <a href="suscripciones.html">Suscripciones</a>
+            <a href="contacto.html">Contacto</a>
+            <a href="adicional2.html">Sucursales</a>
+            <a href="adicional3.html">Preguntas</a>
+            <a href="login.html" class="login-link">Login</a>
+        </nav>
+        <button id="toggle-theme">
+            <img src="imagenes/logoluna.png" alt="Cambiar tema" width="30">
+        </button>
+    </header>
+
+    <main class="container">
+
+        <section class="panel">
+            <h1>Registrar Nuevo Cliente</h1>
+            <p class="tag">Complete los datos del cliente y seleccione un plan de suscripción</p>
+
+            <form style="margin-top: 24px;">
+                <h3>Datos Personales</h3>
+                <div class="grid cols-2" style="margin-top: 16px;">
+                    <div class="form-group">
+                        <label>Nombre Completo *</label>
+                        <input type="text" placeholder="Ej: Juan Pérez García" required>
+                    </div>
+                    <div class="form-group">
+                        <label>DNI *</label>
+                        <input type="text" placeholder="12345678" maxlength="8" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Teléfono *</label>
+                        <input type="tel" placeholder="987654321" maxlength="9" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Correo Electrónico</label>
+                        <input type="email" placeholder="cliente@ejemplo.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Fecha de Nacimiento</label>
+                        <input type="date">
+                    </div>
+                    <div class="form-group">
+                        <label>Dirección</label>
+                        <input type="text" placeholder="Av. Principal 123">
+                    </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <h3>Plan de Suscripción</h3>
+                <div class="form-group" style="margin-top: 16px;">
+                    <label>Seleccione el Plan *</label>
+                    <select id="plan-select" onchange="mostrarInfoPlan()">
+                        <option value="ninguno">Sin suscripción (0% descuento)</option>
+                        <option value="basico">Plan Básico - 5% descuento (S/ 29.90/mes)</option>
+                        <option value="premium">Plan Premium - 10% descuento (S/ 49.90/mes)</option>
+                        <option value="vip">Plan VIP - 15% descuento (S/ 79.90/mes)</option>
+                    </select>
+                </div>
+
+                <div id="info-plan-seleccionado" class="hidden" style="margin-top: 16px;">
+                    <div class="alert alert-info">
+                        <strong>Beneficios del plan seleccionado:</strong>
+                        <ul id="beneficios-lista" style="margin: 12px 0 0 20px; line-height: 1.8;"></ul>
+                    </div>
+                </div>
+
+                <div style="margin-top: 32px; display: flex; gap: 12px;">
+                    <button type="button" class="btn success" onclick="guardarCliente()">Guardar Cliente</button>
+                    <a href="cliente-nuevo.html" class="btn secondary">Cancelar</a>
+                </div>
+            </form>
+        </section>
+
+    </main>
+
+    <footer>CalzaSmart • Sistema de Ventas con Gestión de Suscripciones</footer>
+    <script src="main.js"></script>
+    <script>
+        function mostrarInfoPlan() {
+            const plan = document.getElementById('plan-select').value;
+            const infoDiv = document.getElementById('info-plan-seleccionado');
+            const lista = document.getElementById('beneficios-lista');
+
+            if (plan === 'ninguno') {
+                infoDiv.classList.add('hidden');
+                return;
+            }
+
+            infoDiv.classList.remove('hidden');
+
+            let beneficios = [];
+            if (plan === 'basico') {
+                beneficios = [
+                    '5% de descuento permanente en todas las compras',
+                    'Acceso a promociones mensuales',
+                    'Acumulación de puntos',
+                    'Soporte prioritario por email'
+                ];
+            } else if (plan === 'premium') {
+                beneficios = [
+                    '10% de descuento permanente en todas las compras',
+                    'Promociones exclusivas semanales',
+                    'Doble acumulación de puntos',
+                    'Envío gratis en Lima Metropolitana',
+                    'Soporte prioritario 24/7'
+                ];
+            } else if (plan === 'vip') {
+                beneficios = [
+                    '15% de descuento permanente en todas las compras',
+                    'Acceso anticipado a nuevos productos',
+                    'Triple acumulación de puntos',
+                    'Envío gratis a nivel nacional',
+                    'Asesor personal de compras',
+                    'Eventos exclusivos VIP'
+                ];
+            }
+
+            lista.innerHTML = beneficios.map(b => '<li>' + b + '</li>').join('');
+        }
+
+        function guardarCliente() {
+            alert('Cliente guardado exitosamente.\n\nEsta es una maqueta. En producción se guardará en la base de datos.');
+            window.location.href = 'clientes.html';
+        }
+    </script>
+</body>
+
+</html>
