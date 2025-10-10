@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="es">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -9,67 +10,169 @@
 
 <body>
 
-<header>
-  <div class="brand">CalzaSmart</div>
-  <nav>
-    <a href="main.html">Inicio</a>
-    <a href="catalogo.html">Catálogo</a>
-    <a href="producto-crud.html">CRUD Productos</a>
-    <a href="producto-crear.html">Crear Producto</a>
-    <a href="publicidad.html">Publicidad</a>
-    <a href="metricas.html">Métricas</a>
-    <a href="gestion.html">Gestión</a>
-    <a href="contacto.html">Contacto</a>
-    <a href="login.html" class="login-link">Login</a>
-  </nav>
-  <button id="toggle-theme">
-    <img src="imagenes/logoluna.png" alt="Cambiar tema" width="30">
-  </button>
-</header>
+  <header>
+    <div class="brand">CalzaSmart</div>
+    <nav>
+      <a href="main.html">Inicio</a>
+      <a href="catalogo.html">Catálogo</a>
+      <a href="producto-crud.html">CRUD Productos</a>
+      <a href="producto-crear.html">Crear Producto</a>
+      <a href="publicidad.html">Publicidad</a>
+      <a href="metricas.html">Métricas</a>
+      <a href="gestion.html">Gestión</a>
+      <a href="cliente-nuevo.html">Clientes</a>
+      <a href="suscripciones.html">Suscripciones</a>
+      <a href="contacto.html">Contacto</a>
+      <a href="adicional2.html">Sucursales</a>
+      <a href="adicional3.html">Preguntas</a>
+      <a href="login.html" class="login-link">Login</a>
+    </nav>
+    <button id="toggle-theme">
+      <img src="imagenes/logoluna.png" alt="Cambiar tema" width="30">
+    </button>
+  </header>
 
-<main class="container">
+  <main class="container">
 
-  <section class="grid cols-3">
-    <div class="card kpi">
-      <div class="label">Ventas (hoy)</div>
-      <div class="value">S/ 1,284</div>
-      <div class="tag">Objetivo: reportería</div>
-    </div>
-    <div class="card kpi">
-      <div class="label">Suscriptores activos</div>
-      <div class="value">312</div>
-      <div class="tag">Beneficio: descuentos</div>
-    </div>
-    <div class="card kpi">
-      <div class="label">Ticket promedio</div>
-      <div class="value">S/ 156.40</div>
-      <div class="tag">Estimado</div>
-    </div>
-  </section>
+    <section class="panel">
+      <h1>Panel de Control - Sistema de Ventas CalzaSmart</h1>
+      <p class="tag">Gestión integral de ventas, inventario y clientes</p>
+      <p style="margin-top: 12px; color: var(--muted);">
+        Bienvenido al sistema de gestión. Aquí podrás administrar productos, realizar ventas,
+        gestionar clientes y sus suscripciones con descuentos automáticos.
+      </p>
+    </section>
 
-  <section class="panel">
-    <h2>Acciones rápidas</h2>
-    <div class="grid cols-4">
-      <a class="btn" href="producto-crear.html">Nuevo producto</a>
-      <a class="btn secondary" href="producto-crud.html">Gestionar productos</a>
-      <a class="btn secondary" href="catalogo.html">Ver catálogo</a>
-      <a class="btn secondary" href="metricas.html">Ver métricas</a>
-    </div>
-  </section>
+    <section class="grid cols-4">
+      <div class="card kpi-modern">
+        <div class="kpi-icon">💰</div>
+        <div class="kpi-value">S/ 2,847</div>
+        <div class="kpi-label">Ventas Hoy</div>
+        <div class="tag" style="margin-top: 8px;">+23% vs ayer</div>
+      </div>
+      <div class="card kpi-modern">
+        <div class="kpi-icon">👥</div>
+        <div class="kpi-value">156</div>
+        <div class="kpi-label">Clientes Activos</div>
+        <div class="tag" style="margin-top: 8px;">Total registrados</div>
+      </div>
+      <div class="card kpi-modern">
+        <div class="kpi-icon">⭐</div>
+        <div class="kpi-value">89</div>
+        <div class="kpi-label">Clientes Suscritos</div>
+        <div class="tag" style="margin-top: 8px;">57% del total</div>
+      </div>
+      <div class="card kpi-modern">
+        <div class="kpi-icon">📦</div>
+        <div class="kpi-value">23</div>
+        <div class="kpi-label">Pedidos Hoy</div>
+        <div class="tag" style="margin-top: 8px;">En proceso</div>
+      </div>
+    </section>
 
-  <section class="panel">
-    <h2>Descuentos por suscripción</h2>
-    <p>Los clientes suscritos reciben un <strong>10% de descuento base</strong> y promociones especiales por temporada.</p>
-    <ul>
-      <li>Descuento base suscrito: 10%</li>
-      <li>Promo temporada (suscrito): 15% en zapatillas running</li>
-      <li>Clientes no suscritos: 0-5% según campaña</li>
-    </ul>
-    <p class="tag">La lógica se implementará con Spring + Thymeleaf.</p>
-  </section>
+    <section class="panel">
+      <h2>Acciones Rápidas</h2>
+      <div class="grid cols-4">
+        <a class="btn" href="adicional1.html">Nuevo Pedido</a>
+        <a class="btn secondary" href="producto-crud.html">Gestionar Productos</a>
+        <a class="btn secondary" href="catalogo.html">Ver Catálogo</a>
+        <a class="btn info" href="cliente-nuevo.html">Ver Clientes</a>
+        <a class="btn success" href="suscripciones.html">Suscripciones</a>
+        <a class="btn secondary" href="metricas.html">Ver Métricas</a>
+        <a class="btn secondary" href="publicidad.html">Campañas</a>
+        <a class="btn secondary" href="gestion.html">Gestión</a>
+      </div>
+    </section>
 
-</main>
-<footer>CalzaSmart • Proyecto Ingeniería de Sistemas (Semana 4) — Maqueta HTML</footer>
-<script src="main.js"></script>
+    <section class="grid cols-2">
+      <div class="panel">
+        <h2>Sistema de Suscripciones</h2>
+        <p>Los clientes suscritos obtienen descuentos automáticos en cada compra:</p>
+
+        <div class="stats-mini">
+          <div class="stat-item">
+            <div class="stat-value">32</div>
+            <div class="stat-label">Plan Básico</div>
+            <div style="color: var(--ok); font-weight: 700; margin-top: 4px;">5%</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">45</div>
+            <div class="stat-label">Plan Premium</div>
+            <div style="color: var(--ok); font-weight: 700; margin-top: 4px;">10%</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">12</div>
+            <div class="stat-label">Plan VIP</div>
+            <div style="color: var(--ok); font-weight: 700; margin-top: 4px;">15%</div>
+          </div>
+        </div>
+
+        <div style="margin-top: 20px;">
+          <a href="suscripciones.html" class="btn success" style="width: 100%;">Ver Detalles de Planes</a>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>Últimos Pedidos</h2>
+        <table style="margin-top: 16px;">
+          <thead>
+            <tr>
+              <th>Cliente</th>
+              <th>Plan</th>
+              <th>Monto</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Juan Pérez</td>
+              <td><span class="badge badge-success">Premium</span></td>
+              <td>S/ 340.20</td>
+              <td><span class="badge badge-success">Pagado</span></td>
+            </tr>
+            <tr>
+              <td>María López</td>
+              <td><span class="badge badge-info">Básico</span></td>
+              <td>S/ 179.55</td>
+              <td><span class="badge badge-warning">Pendiente</span></td>
+            </tr>
+            <tr>
+              <td>Carlos Ruiz</td>
+              <td><span class="badge badge-warning">VIP</span></td>
+              <td>S/ 387.80</td>
+              <td><span class="badge badge-success">Pagado</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Beneficios del Sistema -->
+    <section class="panel">
+      <h2>Beneficios del Sistema de Suscripciones</h2>
+      <div class="grid cols-3">
+        <div class="card">
+          <h3>✓ Descuentos Automáticos</h3>
+          <p>Al registrar el DNI del cliente, el sistema detecta automáticamente su plan
+            y aplica el descuento correspondiente sin intervención manual.</p>
+        </div>
+        <div class="card">
+          <h3>✓ Fidelización de Clientes</h3>
+          <p>Los clientes suscritos realizan más compras y generan mayor facturación
+            mensual. Aumenta la retención en un 40%.</p>
+        </div>
+        <div class="card">
+          <h3>✓ Gestión Simplificada</h3>
+          <p>Control total de clientes, historial de compras y seguimiento de beneficios.
+            Todo centralizado en un solo sistema.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>CalzaSmart • Sistema de Ventas con Gestión de Suscripciones</footer>
+  <script src="main.js"></script>
 </body>
+
 </html>
