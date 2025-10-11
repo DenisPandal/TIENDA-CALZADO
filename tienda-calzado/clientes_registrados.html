@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Clientes Registrados • CalzaSmart</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="brand">CalzaSmart</div>
+        <nav>
+            <a href="main.html">Inicio</a>
+            <a href="catalogo.html">Catálogo</a>
+            <a href="producto-crud.html">CRUD Productos</a>
+            <a href="producto-crear.html">Crear Producto</a>
+            <a href="publicidad.html">Publicidad</a>
+            <a href="metricas.html">Métricas</a>
+            <a href="gestion.html">Gestión</a>
+            <a href="cliente-nuevo.html" class="active">Clientes</a>
+            <a href="suscripciones.html">Suscripciones</a>
+            <a href="adicional2.html">Sucursales</a>
+            <a href="adicional3.html">Preguntas</a>
+            <a href="login.html" class="login-link">Login</a>
+        </nav>
+        <button id="toggle-theme">
+            <img src="imagenes/logoluna.png" alt="Cambiar tema" width="30">
+        </button>
+    </header>
+
+    <main class="container">
+
+        <section class="panel">
+            <h1>Clientes Registrados</h1>
+            <p class="tag">Lista completa de clientes con sus datos y plan de suscripción</p>
+            <div style="margin:10px 0">
+                <a class="btn" href="cliente-nuevo.html">Registrar nuevo cliente</a>
+            </div>
+            <table id="clientes-table">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>DNI</th>
+                        <th>Teléfono</th>
+                        <th>Correo</th>
+                        <th>Plan</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+    <footer>CalzaSmart • Sistema de Ventas con Gestión de Suscripciones</footer>
+    <script src="main.js"></script>
+    <script>
+        function cargarClientes() {
+            const clientes = JSON.parse(localStorage.getItem('clientes')) || [];
+            const tbody = document.getElementById('clientes-table').querySelector('tbody');
+
+            tbody.innerHTML = '';
+
+            if (clientes.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="6" style="text-align: center; color: var(--muted);">No hay clientes registrados.</td></tr>`;
+                return;
+            }
+
+            clientes.forEach((cliente, index) => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${cliente.nombre}</td>
+                    <td>${cliente.dni}</td>
+                    <td>${cliente.telefono}</td>
+                    <td>${cliente.email || '-'}</td>
+                    <td>${cliente.plan}</td>
+                    <td>
+                        <button class="btn delete" onclick="eliminarCliente(${index})">Eliminar</button>
+                    </td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+
+        function eliminarCliente(index) {
+            if (confirm('¿Está seguro de eliminar este cliente?')) {
+                let clientes = JSON.parse(localStorage.getItem('clientes'));
+                clientes.splice(index, 1);
+                localStorage.setItem('clientes', JSON.stringify(clientes));
+                cargarClientes();
+                alert('Cliente eliminado.');
+            }
+        }
+
+        window.onload = cargarClientes;
+    </script>
+</body>
+
+</html>
