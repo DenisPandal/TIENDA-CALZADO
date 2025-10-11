@@ -20,8 +20,8 @@
             <a href="publicidad.html">Publicidad</a>
             <a href="metricas.html">Métricas</a>
             <a href="gestion.html">Gestión</a>
+            <a href="cliente-nuevo.html" class="active">Clientes</a>
             <a href="suscripciones.html">Suscripciones</a>
-            <a href="contacto.html">Contacto</a>
             <a href="adicional2.html">Sucursales</a>
             <a href="adicional3.html">Preguntas</a>
             <a href="login.html" class="login-link">Login</a>
@@ -42,27 +42,27 @@
                 <div class="grid cols-2" style="margin-top: 16px;">
                     <div class="form-group">
                         <label>Nombre Completo *</label>
-                        <input type="text" placeholder="Ej: Juan Pérez García" required>
+                        <input type="text" id="nombre" placeholder="Ej: Juan Pérez García" required>
                     </div>
                     <div class="form-group">
                         <label>DNI *</label>
-                        <input type="text" placeholder="12345678" maxlength="8" required>
+                        <input type="text" id="dni" placeholder="12345678" maxlength="8" required>
                     </div>
                     <div class="form-group">
                         <label>Teléfono *</label>
-                        <input type="tel" placeholder="987654321" maxlength="9" required>
+                        <input type="tel" id="telefono" placeholder="987654321" maxlength="9" required>
                     </div>
                     <div class="form-group">
                         <label>Correo Electrónico</label>
-                        <input type="email" placeholder="cliente@ejemplo.com">
+                        <input type="email" id="email" placeholder="cliente@ejemplo.com">
                     </div>
                     <div class="form-group">
                         <label>Fecha de Nacimiento</label>
-                        <input type="date">
+                        <input type="date" id="fecha-nacimiento">
                     </div>
                     <div class="form-group">
                         <label>Dirección</label>
-                        <input type="text" placeholder="Av. Principal 123">
+                        <input type="text" id="direccion" placeholder="Av. Principal 123">
                     </div>
                 </div>
 
@@ -88,7 +88,7 @@
 
                 <div style="margin-top: 32px; display: flex; gap: 12px;">
                     <button type="button" class="btn success" onclick="guardarCliente()">Guardar Cliente</button>
-                    <a href="cliente-nuevo.html" class="btn secondary">Cancelar</a>
+                    <a href="clientes_registrados.html" class="btn secondary">Cancelar</a>
                 </div>
             </form>
         </section>
@@ -141,8 +141,37 @@
         }
 
         function guardarCliente() {
-            alert('Cliente guardado exitosamente.\n\nEsta es una maqueta. En producción se guardará en la base de datos.');
-            window.location.href = 'clientes.html';
+            const nombre = document.getElementById('nombre').value;
+            const dni = document.getElementById('dni').value;
+            const telefono = document.getElementById('telefono').value;
+            const email = document.getElementById('email').value;
+            const fechaNacimiento = document.getElementById('fecha-nacimiento').value;
+            const direccion = document.getElementById('direccion').value;
+            const plan = document.getElementById('plan-select').options[document.getElementById('plan-select').selectedIndex].text;
+
+            if (!nombre || !dni || !telefono) {
+                alert('Por favor complete los campos obligatorios (*)');
+                return;
+            }
+
+            const nuevoCliente = {
+                nombre: nombre,
+                dni: dni,
+                telefono: telefono,
+                email: email,
+                fechaNacimiento: fechaNacimiento,
+                direccion: direccion,
+                plan: plan
+            };
+
+            const clientes = JSON.parse(localStorage.getItem('clientes')) || [];
+
+            clientes.push(nuevoCliente);
+
+            localStorage.setItem('clientes', JSON.stringify(clientes));
+
+            alert('Cliente ' + nombre + ' registrado exitosamente.');
+            window.location.href = 'clientes_registrados.html';
         }
     </script>
 </body>
