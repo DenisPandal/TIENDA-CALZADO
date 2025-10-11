@@ -19,7 +19,6 @@
       <a href="publicidad.html">Publicidad</a>
       <a href="metricas.html">Métricas</a>
       <a href="gestion.html">Gestión</a>
-      <a href="contacto.html">Contacto</a>
       <a href="cliente-nuevo.html">Clientes</a>
       <a href="suscripciones.html">Suscripciones</a>
       <a href="adicional2.html">Sucursales</a>
@@ -33,12 +32,10 @@
 
   <main class="container">
 
-    <!-- Panel de datos del cliente -->
     <section class="panel">
       <h1>Nuevo Pedido</h1>
       <p class="tag">Busca el cliente por DNI o registra uno nuevo</p>
 
-      <!-- Búsqueda de Cliente -->
       <div style="margin: 20px 0; padding: 20px; background: var(--bg); border-radius: 12px;">
         <h3 style="margin-bottom: 16px;">Paso 1: Identificar Cliente</h3>
         <div class="grid cols-2" style="gap: 12px;">
@@ -47,200 +44,98 @@
             <input type="text" id="dni-buscar" placeholder="Ingrese DNI (8 dígitos)" maxlength="8">
           </div>
           <div style="display: flex; align-items: flex-end; gap: 10px;">
-            <button class="btn" onclick="buscarClientePedido()" style="flex: 1;">Buscar Cliente</button>
-            <button class="btn secondary" onclick="mostrarFormularioNuevo()" style="flex: 1;">Nuevo Cliente</button>
+            <button class="btn" style="flex: 1;">Buscar Cliente</button>
+            <a class="btn secondary" href="cliente-nuevo.html" style="flex: 1;">Nuevo Cliente</a>
           </div>
         </div>
       </div>
 
-      <!-- Cliente Encontrado -->
-      <div id="cliente-encontrado" class="hidden">
+      <div id="cliente-encontrado">
         <div class="alert alert-success">
           ✓ Cliente encontrado en el sistema
         </div>
         <div class="client-info-box">
           <div class="client-name">
-            <span id="nombre-cliente-display"></span>
-            <span class="badge badge-success" id="plan-badge-display" style="margin-left: 12px;"></span>
+            <span>Juan Pérez García</span>
+            <span class="badge badge-success" style="margin-left: 12px;">Plan Premium</span>
           </div>
           <div class="grid cols-2" style="margin-top: 12px;">
             <div>
-              <div class="client-detail"><strong>DNI:</strong> <span id="dni-display"></span></div>
-              <div class="client-detail"><strong>Teléfono:</strong> <span id="telefono-display"></span></div>
+              <div class="client-detail"><strong>DNI:</strong> 12345678</div>
+              <div class="client-detail"><strong>Teléfono:</strong> 987654321</div>
             </div>
             <div>
-              <div class="client-detail">
-                <strong>Descuento Activo:</strong>
-                <span id="descuento-display" style="color: var(--ok); font-size: 1.3rem; font-weight: 800;"></span>
-              </div>
-              <div class="client-detail">
-                <strong>Compras este mes:</strong> <span id="compras-mes-display"></span>
-              </div>
+              <div class="client-detail"><strong>Descuento Activo:</strong> 10%</div>
+              <div class="client-detail"><strong>Compras este mes:</strong> 14</div>
               <div class="progress-bar">
-                <div class="progress-fill" id="progreso-cliente" style="width: 0%;"></div>
+                <div class="progress-fill" style="width: 70%;"></div>
               </div>
             </div>
           </div>
         </div>
-        <div style="margin-top: 16px;">
-          <button class="btn success" onclick="continuarConCliente()">Continuar con este Cliente</button>
-          <button class="btn secondary" onclick="limpiarBusqueda()">Buscar Otro</button>
-        </div>
       </div>
 
-      <!-- Formulario Nuevo Cliente -->
-      <div id="form-nuevo-cliente" class="hidden">
-        <h3>Registro de Nuevo Cliente</h3>
-        <form style="margin-top: 16px;">
-          <div class="grid cols-2" style="gap:20px;">
-            <div>
-              <div class="form-group">
-                <label>Nombre Completo *</label>
-                <input type="text" id="nuevo-nombre" placeholder="Ingrese nombre completo">
-              </div>
-
-              <div class="form-group">
-                <label>DNI *</label>
-                <input type="text" id="nuevo-dni" placeholder="12345678" maxlength="8">
-              </div>
-
-              <div class="form-group">
-                <label>Teléfono *</label>
-                <input type="tel" id="nuevo-telefono" placeholder="987654321" maxlength="9">
-              </div>
-            </div>
-            <div>
-              <div class="form-group">
-                <label>Correo Electrónico</label>
-                <input type="email" id="nuevo-email" placeholder="cliente@ejemplo.com">
-              </div>
-
-              <div class="form-group">
-                <label>Plan de Suscripción *</label>
-                <select id="nuevo-plan" onchange="mostrarDescuentoPlan()">
-                  <option value="ninguno">Sin suscripción (0% descuento)</option>
-                  <option value="basico">Plan Básico (5% descuento - S/ 29.90/mes)</option>
-                  <option value="premium">Plan Premium (10% descuento - S/ 49.90/mes)</option>
-                  <option value="vip">Plan VIP (15% descuento - S/ 79.90/mes)</option>
-                </select>
-              </div>
-
-              <div id="info-plan" class="alert alert-info hidden" style="margin-top: 12px;">
-                <strong>Beneficio seleccionado:</strong> <span id="beneficio-plan"></span>
-              </div>
-            </div>
-          </div>
-
-          <div style="margin-top: 20px; display:flex; gap:10px;">
-            <button type="button" class="btn" onclick="registrarNuevoCliente()">Registrar y Continuar</button>
-            <button type="button" class="btn secondary" onclick="ocultarFormularioNuevo()">Cancelar</button>
-          </div>
-        </form>
-      </div>
     </section>
 
-    <!-- Panel de detalle de pedido -->
-    <section id="pedido" class="panel hidden">
+    <section class="panel">
       <h2>Paso 2: Selección de Productos</h2>
 
       <div class="grid cols-2" style="align-items:start; gap:20px;">
 
-        <!-- Lista de productos -->
         <div>
           <h3>Productos Disponibles</h3>
           <article class="card" style="margin-bottom: 16px;">
             <div style="display:flex; gap:12px; align-items:center; justify-content:space-between;">
               <div style="display:flex; gap:12px; align-items:center;">
-                <div
-                  style="width:80px; height:80px; background:#0d1117; border:1px dashed #30363d; border-radius:12px; display:flex; align-items:center; justify-content:center; color: var(--muted);">
+                <div style="width:80px; height:80px; background:#0d1117; border:1px dashed #30363d; border-radius:12px; display:flex; align-items:center; justify-content:center; color: var(--muted);">
                   IMG</div>
                 <div>
                   <h3 style="margin:0 0 8px 0;">Zapatilla Runner X</h3>
                   <div class="muted">Talla 40-44</div>
+                  <p style="font-size: 0.9rem; color: var(--muted);">Zapatilla de running de alto rendimiento con amortiguación premium.</p>
                   <div style="margin: 8px 0;">
                     <span style="font-size: 1.2rem; font-weight: 700;">S/ 189.00</span>
-                    <span id="precio-desc-1" class="hidden"
-                      style="color: var(--ok); margin-left: 8px; font-weight: 600;"></span>
                   </div>
                 </div>
               </div>
-              <button class="btn success"
-                onclick="agregarAlCarrito('Modelo 1', 'Zapatilla Runner X', 42, 189, 1)">Añadir</button>
-            </div>
-          </article>
-
-          <article class="card" style="margin-bottom: 16px;">
-            <div style="display:flex; gap:12px; align-items:center; justify-content:space-between;">
-              <div style="display:flex; gap:12px; align-items:center;">
-                <div
-                  style="width:80px; height:80px; background:#0d1117; border:1px dashed #30363d; border-radius:12px; display:flex; align-items:center; justify-content:center; color: var(--muted);">
-                  IMG</div>
-                <div>
-                  <h3 style="margin:0 0 8px 0;">Botín Trek Pro</h3>
-                  <div class="muted">Talla 39-43</div>
-                  <div style="margin: 8px 0;">
-                    <span style="font-size: 1.2rem; font-weight: 700;">S/ 259.00</span>
-                    <span id="precio-desc-2" class="hidden"
-                      style="color: var(--ok); margin-left: 8px; font-weight: 600;"></span>
-                  </div>
-                </div>
-              </div>
-              <button class="btn success"
-                onclick="agregarAlCarrito('Modelo 2', 'Botín Trek Pro', 41, 259, 1)">Añadir</button>
-            </div>
-          </article>
-
-          <article class="card">
-            <div style="display:flex; gap:12px; align-items:center; justify-content:space-between;">
-              <div style="display:flex; gap:12px; align-items:center;">
-                <div
-                  style="width:80px; height:80px; background:#0d1117; border:1px dashed #30363d; border-radius:12px; display:flex; align-items:center; justify-content:center; color: var(--muted);">
-                  IMG</div>
-                <div>
-                  <h3 style="margin:0 0 8px 0;">Casual Urban</h3>
-                  <div class="muted">Talla 38-42</div>
-                  <div style="margin: 8px 0;">
-                    <span style="font-size: 1.2rem; font-weight: 700;">S/ 149.00</span>
-                    <span id="precio-desc-3" class="hidden"
-                      style="color: var(--ok); margin-left: 8px; font-weight: 600;"></span>
-                  </div>
-                </div>
-              </div>
-              <button class="btn success"
-                onclick="agregarAlCarrito('Modelo 3', 'Casual Urban', 40, 149, 1)">Añadir</button>
+              <button class="btn success">Añadir</button>
             </div>
           </article>
         </div>
 
-        <!-- Resumen del pedido -->
         <aside class="card">
           <h3>Resumen del Pedido</h3>
-
-          <div id="items-carrito" style="margin: 16px 0;">
-            <p style="color: var(--muted); text-align: center; padding: 20px;">
-              No hay productos en el carrito
-            </p>
+          <!-- Producto simulado para maqueta -->
+          <div class="cart-item" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 1px dashed var(--muted); padding-bottom: 8px;">
+            <div class="cart-item-info">
+              <div class="cart-item-name" style="font-weight: bold;">Zapatilla Runner X</div>
+              <div class="cart-item-price" style="font-size: 0.9rem;">
+                Talla: 42 | Cant: 1 | 
+                <span style="text-decoration: line-through; color: var(--muted);">S/ 189.00</span>
+                <span style="color: var(--ok); font-weight: 700;">S/ 170.10</span>
+              </div>
+            </div>
+            <button class="cart-item-remove btn delete" style="padding: 6px 10px; font-size: 0.8rem;">Eliminar</button>
           </div>
 
           <div class="divider"></div>
 
           <div style="margin:8px 0; display:flex; justify-content:space-between;">
             <span>Subtotal</span>
-            <span id="subtotal-carrito">S/ 0.00</span>
+            <span>S/ 170.10</span>
           </div>
           <div style="margin:8px 0; display:flex; justify-content:space-between; color: var(--ok); font-weight: 600;">
-            <span>Descuento (<span id="porc-descuento">0</span>%)</span>
-            <span id="descuento-carrito">- S/ 0.00</span>
+            <span>Descuento (10%)</span>
+            <span>- S/ 18.90</span>
           </div>
-          <div
-            style="margin:16px 0; display:flex; justify-content:space-between; font-weight:bold; font-size: 1.3rem; color: var(--accent);">
+          <div style="margin:16px 0; display:flex; justify-content:space-between; font-weight:bold; font-size: 1.3rem; color: var(--accent);">
             <span>TOTAL</span>
-            <span id="total-carrito">S/ 0.00</span>
+            <span>S/ 151.20</span>
           </div>
 
           <div style="margin-top:20px;">
             <label>Método de Pago *</label>
-            <select id="metodo-pago" style="margin-top: 8px;">
+            <select style="margin-top: 8px;">
               <option value="">Seleccione...</option>
               <option value="efectivo">Efectivo</option>
               <option value="tarjeta">Tarjeta de Crédito/Débito</option>
@@ -251,7 +146,7 @@
           </div>
 
           <div style="margin-top:20px; display:flex; gap:10px; flex-direction: column;">
-            <button class="btn success" onclick="confirmarPedido()" style="width: 100%;">Confirmar Pedido</button>
+            <button class="btn success" style="width: 100%;">Confirmar Pedido</button>
             <a href="catalogo.html" class="btn secondary" style="width: 100%; text-align: center;">Seguir comprando</a>
           </div>
         </aside>
@@ -262,8 +157,6 @@
   </main>
 
   <footer>CalzaSmart • Sistema de Ventas con Gestión de Suscripciones</footer>
-  <script src="main.js"></script>
-  <script src="pedidos.js"></script>
-</body>
 
+</body>
 </html>
