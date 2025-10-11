@@ -1,15 +1,12 @@
 <!doctype html>
 <html lang="es">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Métricas • CalzaSmart</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-
   <header>
     <div class="brand">CalzaSmart</div>
     <nav>
@@ -34,6 +31,7 @@
 
   <main class="container">
 
+    <!-- KPIs -->
     <section class="grid cols-3">
       <div class="card kpi">
         <div class="label">Ventas hoy</div>
@@ -46,26 +44,31 @@
         <div class="tag">KPI 2</div>
       </div>
       <div class="card kpi">
-        <div class="label">Descuento promedio</div>
-        <div class="value">12%</div>
+        <div class="label">Variación de ventas</div>
+        <div class="value">+8%</div>
         <div class="tag">KPI 3</div>
       </div>
     </section>
-    <section class="panel">
-      <h2>Gráfico</h2>
-      <p class="tag">SVG estático (cumple “hay un gráfico” sin usar JS).</p>
 
-      <svg viewBox="0 0 520 220" width="100%" height="220" role="img" aria-label="Ventas semanales">
-        <rect x="0" y="0" width="520" height="220" fill="none" stroke="#30363d" />
-        <text x="14" y="20" fill="#8b949e" font-size="12">Ventas por semana (S/)</text>
-        <line x1="40" y1="190" x2="500" y2="190" stroke="#30363d" />
-        <line x1="40" y1="30" x2="40" y2="190" stroke="#30363d" />
-        <text x="10" y="190" fill="#8b949e" font-size="10">0</text>
-        <text x="2" y="150" fill="#8b949e" font-size="10">500</text>
-        <text x="2" y="110" fill="#8b949e" font-size="10">1000</text>
-        <text x="2" y="70" fill="#8b949e" font-size="10">1500</text>
-        <text x="2" y="30" fill="#8b949e" font-size="10">2000</text>
-        <g fill="#2f81f7">
+    <!-- Gráfico 1: Ventas por semana -->
+    <section class="panel">
+      <h2>Ventas por semana (S/)</h2>
+      <svg viewBox="0 0 520 220" width="100%" height="220" role="img" aria-label="Ventas semanales" style="--bar-color: var(--accent); --axis-color: var(--muted);">
+        <rect x="0" y="0" width="520" height="220" fill="none" stroke="var(--accent)" />
+        <line x1="40" y1="190" x2="500" y2="190" stroke="var(--axis-color)" />
+        <line x1="40" y1="30" x2="40" y2="190" stroke="var(--axis-color)" />
+
+        <!-- Eje Y -->
+        <g fill="var(--muted)" font-size="10">
+          <text x="5" y="190">0</text>
+          <text x="5" y="150">500</text>
+          <text x="5" y="110">1000</text>
+          <text x="5" y="70">1500</text>
+          <text x="5" y="30">2000</text>
+        </g>
+
+        <!-- Barras -->
+        <g fill="var(--bar-color)">
           <rect x="60" y="130" width="40" height="60"></rect>
           <rect x="120" y="100" width="40" height="90"></rect>
           <rect x="180" y="80" width="40" height="110"></rect>
@@ -74,7 +77,9 @@
           <rect x="360" y="120" width="40" height="70"></rect>
           <rect x="420" y="85" width="40" height="105"></rect>
         </g>
-        <g fill="#8b949e" font-size="10">
+
+        <!-- Eje X -->
+        <g fill="var(--muted)" font-size="10">
           <text x="63" y="205">Sem 1</text>
           <text x="123" y="205">Sem 2</text>
           <text x="183" y="205">Sem 3</text>
@@ -84,12 +89,93 @@
           <text x="423" y="205">Sem 7</text>
         </g>
       </svg>
+    </section>
 
+    <!-- Gráfico 2: Tasa de suscripción -->
+    <section class="panel">
+      <h2>Tasa de suscripción (%)</h2>
+      <svg viewBox="0 0 520 220" width="100%" height="220" role="img" aria-label="Tasa de suscripción semanal" style="--bar-color: var(--warn); --axis-color: var(--muted);">
+        <rect x="0" y="0" width="520" height="220" fill="none" stroke="var(--accent)" />
+        <line x1="40" y1="190" x2="500" y2="190" stroke="var(--axis-color)" />
+        <line x1="40" y1="30" x2="40" y2="190" stroke="var(--axis-color)" />
+
+        <!-- Eje Y -->
+        <g fill="var(--muted)" font-size="10">
+          <text x="10" y="190">0%</text>
+          <text x="5" y="150">10%</text>
+          <text x="5" y="110">20%</text>
+          <text x="5" y="70">30%</text>
+          <text x="5" y="30">40%</text>
+        </g>
+
+        <!-- Barras -->
+        <g fill="var(--bar-color)">
+          <rect x="60" y="150" width="40" height="40"></rect>
+          <rect x="120" y="140" width="40" height="50"></rect>
+          <rect x="180" y="110" width="40" height="80"></rect>
+          <rect x="240" y="90" width="40" height="100"></rect>
+          <rect x="300" y="100" width="40" height="90"></rect>
+          <rect x="360" y="130" width="40" height="60"></rect>
+          <rect x="420" y="125" width="40" height="65"></rect>
+        </g>
+
+        <!-- Eje X -->
+        <g fill="var(--muted)" font-size="10">
+          <text x="63" y="205">Sem 1</text>
+          <text x="123" y="205">Sem 2</text>
+          <text x="183" y="205">Sem 3</text>
+          <text x="243" y="205">Sem 4</text>
+          <text x="303" y="205">Sem 5</text>
+          <text x="363" y="205">Sem 6</text>
+          <text x="423" y="205">Sem 7</text>
+        </g>
+      </svg>
+    </section>
+
+    <!-- Gráfico 3: Variación de ventas -->
+    <section class="panel">
+      <h2>Variación de ventas (%)</h2>
+      <svg viewBox="0 0 520 220" width="100%" height="220" role="img" aria-label="Variación de ventas semanal" style="--bar-color: var(--ok); --axis-color: var(--muted);">
+        <rect x="0" y="0" width="520" height="220" fill="none" stroke="var(--accent)" />
+        <line x1="40" y1="190" x2="500" y2="190" stroke="var(--axis-color)" />
+        <line x1="40" y1="30" x2="40" y2="190" stroke="var(--axis-color)" />
+
+        <!-- Eje Y -->
+        <g fill="var(--muted)" font-size="10">
+          <text x="10" y="190">-10%</text>
+          <text x="10" y="150">0%</text>
+          <text x="10" y="110">10%</text>
+          <text x="10" y="70">20%</text>
+          <text x="10" y="30">30%</text>
+        </g>
+
+        <!-- Barras -->
+        <g fill="var(--bar-color)">
+          <rect x="60" y="150" width="40" height="40"></rect>
+          <rect x="120" y="130" width="40" height="60"></rect>
+          <rect x="180" y="110" width="40" height="80"></rect>
+          <rect x="240" y="100" width="40" height="90"></rect>
+          <rect x="300" y="80" width="40" height="110"></rect>
+          <rect x="360" y="90" width="40" height="100"></rect>
+          <rect x="420" y="75" width="40" height="115"></rect>
+        </g>
+
+        <!-- Eje X -->
+        <g fill="var(--muted)" font-size="10">
+          <text x="63" y="205">Sem 1</text>
+          <text x="123" y="205">Sem 2</text>
+          <text x="183" y="205">Sem 3</text>
+          <text x="243" y="205">Sem 4</text>
+          <text x="303" y="205">Sem 5</text>
+          <text x="363" y="205">Sem 6</text>
+          <text x="423" y="205">Sem 7</text>
+        </g>
+      </svg>
     </section>
 
   </main>
+
   <footer>CalzaSmart • Proyecto Ingeniería de Sistemas (Semana 4) — Maqueta HTML</footer>
   <script src="main.js"></script>
 </body>
-
 </html>
