@@ -47,12 +47,12 @@
         </div>
         <div>
           <label>Categoría</label>
-          <select>
-            <option>Running</option>
-            <option>Casual</option>
-            <option>Formal</option>
-            <option>Trekking</option>
-          </select>
+          <div style="display:flex; gap:10px; align-items:center;">
+            <select id="categoria"></select>
+            <button type="button" id="btn-nueva-cat" class="btn secondary">+</button>
+            <button type="button" id="btn-editar-cat" class="btn secondary">✎</button>
+            <button type="button" id="btn-eliminar-cat" class="btn secondary">🗑️</button>
+          </div>
         </div>
         <div>
           <label>Talla (rango)</label>
