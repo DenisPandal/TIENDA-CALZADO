@@ -1,19 +1,24 @@
 const btn = document.getElementById("toggle-theme");
 const root = document.documentElement;
 
-if (localStorage.getItem("theme")==="night") {
-  root.classList.add("night");
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'night') {
+  root.classList.add('night');
+  const img = btn.querySelector("img");
+  img.src = "imagenes/logosol.png";
 }
 
 btn.addEventListener("click", () => {
   root.classList.toggle("night");
 
   const img = btn.querySelector("img");
-  if (root.classList.contains("night")) {
+  const isNight = root.classList.contains("night");
+
+  if (isNight) {
     img.src = "imagenes/logosol.png";
-    localStorage.setItem("theme", "night"); 
+    localStorage.setItem('theme', 'night');
   } else {
     img.src = "imagenes/logoluna.png";
-    localStorage.setItem("theme", "day"); 
+    localStorage.setItem('theme', 'light');
   }
 });
