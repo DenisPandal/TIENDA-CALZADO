@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Publicidad • CalzaSmart</title>
+  <title>Planes y Publicidad • CalzaSmart</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -13,17 +13,10 @@
     <div class="brand">CalzaSmart</div>
     <nav>
       <a href="main.html">Inicio</a>
-      <a href="catalogo.html">Catálogo</a>
-      <a href="producto-crud.html">CRUD Productos</a>
-      <a href="producto-crear.html">Crear Producto</a>
-      <a href="publicidad.html">Publicidad</a>
+      <a href="producto-crud.html">Gestión Productos</a>
+      <a href="adicional1.html">Registro Ventas</a>
+      <a href="publicidad.html" class="active">Planes Suscripción</a>
       <a href="metricas.html">Métricas</a>
-      <a href="gestion.html">Gestión</a>
-      <a href="contacto.html">Contacto</a>
-      <a href="cliente-nuevo.html">Clientes</a>
-      <a href="suscripciones.html">Suscripciones</a>
-      <a href="adicional2.html">Sucursales</a>
-      <a href="adicional3.html">Preguntas</a>
       <a href="login.html" class="login-link">Login</a>
     </nav>
     <button id="toggle-theme">
@@ -34,7 +27,8 @@
   <main class="container">
 
     <section class="panel">
-      <h1>Campañas y banners</h1>
+      <h1>Campañas y Publicidad</h1>
+      <p class="tag">Banners promocionales y ofertas</p>
       <div class="grid cols-3">
         <div class="card">
           <div class="tag">Campaña</div>
@@ -63,8 +57,66 @@
       </div>
     </section>
 
+    <section class="panel">
+      <h2>Planes de Suscripción</h2>
+      <p class="tag">Atrae a tus clientes con beneficios exclusivos</p>
+      <div class="grid cols-3" style="margin-top: 24px;">
+        <div class="card plan-card">
+          <div style="text-align: center;">
+            <h3 style="color: var(--info); font-size: 1.5rem; margin-bottom: 8px;">Plan Básico</h3>
+            <div class="plan-price" style="color: var(--info);">5%</div>
+            <p style="color: var(--muted); margin-bottom: 20px;">Descuento permanente</p>
+          </div>
+          <ul class="plan-features">
+            <li>5% de descuento en todas las compras</li>
+            <li>Acceso a promociones mensuales</li>
+            <li>Acumulación de puntos</li>
+          </ul>
+          <div style="text-align: center; padding-top: 16px; border-top: 2px solid var(--info);">
+            <div style="font-size: 1.8rem; font-weight: 800; color: var(--info);">S/ 29.90</div>
+            <div style="color: var(--muted); font-size: 0.9rem;">por mes</div>
+          </div>
+        </div>
+        <div class="card plan-card plan-popular">
+          <div class="plan-badge">Más Popular</div>
+          <div style="text-align: center;">
+            <h3 style="color: var(--ok); font-size: 1.5rem; margin-bottom: 8px;">Plan Premium</h3>
+            <div class="plan-price" style="color: var(--ok);">10%</div>
+            <p style="color: var(--muted); margin-bottom: 20px;">Mayor ahorro garantizado</p>
+          </div>
+          <ul class="plan-features">
+            <li>10% de descuento permanente</li>
+            <li>Promociones exclusivas semanales</li>
+            <li>Doble acumulación de puntos</li>
+            <li>Envío gratis en Lima Metropolitana</li>
+          </ul>
+          <div style="text-align: center; padding-top: 16px; border-top: 2px solid var(--ok);">
+            <div style="font-size: 1.8rem; font-weight: 800; color: var(--ok);">S/ 49.90</div>
+            <div style="color: var(--muted); font-size: 0.9rem;">por mes</div>
+          </div>
+        </div>
+        <div class="card plan-card">
+          <div style="text-align: center;">
+            <h3 style="color: var(--warn); font-size: 1.5rem; margin-bottom: 8px;">Plan VIP</h3>
+            <div class="plan-price" style="color: var(--warn);">15%</div>
+            <p style="color: var(--muted); margin-bottom: 20px;">Beneficios exclusivos</p>
+          </div>
+          <ul class="plan-features">
+            <li>15% de descuento permanente</li>
+            <li>Acceso VIP a todas las promociones</li>
+            <li>Triple acumulación de puntos</li>
+            <li>Envío express gratis a nivel nacional</li>
+          </ul>
+          <div style="text-align: center; padding-top: 16px; border-top: 2px solid var(--warn);">
+            <div style="font-size: 1.8rem; font-weight: 800; color: var(--warn);">S/ 79.90</div>
+            <div style="color: var(--muted); font-size: 0.9rem;">por mes</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
-  <footer>CalzaSmart • Proyecto Ingeniería de Sistemas (Semana 4) — Maqueta HTML</footer>
+  <footer>CalzaSmart • Proyecto Ingeniería de Sistemas — Maqueta HTML</footer>
   <script src="main.js"></script>
 </body>
 
