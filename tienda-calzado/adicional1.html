@@ -16,12 +16,11 @@
       <a href="catalogo.html">Catálogo</a>
       <a href="producto-crud.html">CRUD Productos</a>
       <a href="producto-crear.html">Crear Producto</a>
+      <a href="categoria-editar.html">Categorías</a>
       <a href="publicidad.html">Publicidad</a>
       <a href="metricas.html">Métricas</a>
       <a href="gestion.html">Gestión</a>
       <a href="cliente-nuevo.html">Clientes</a>
-      <a href="suscripciones.html">Suscripciones</a>
-      <a href="adicional2.html">Sucursales</a>
       <a href="adicional3.html">Preguntas</a>
       <a href="login.html" class="login-link">Login</a>
     </nav>
@@ -46,6 +45,7 @@
           <div style="display: flex; align-items: flex-end; gap: 10px;">
             <button class="btn" style="flex: 1;">Buscar Cliente</button>
             <a class="btn secondary" href="cliente-nuevo.html" style="flex: 1;">Nuevo Cliente</a>
+            <button class="btn" style="flex: 1;">Cliente Generico</button>
           </div>
         </div>
       </div>
@@ -57,7 +57,7 @@
         <div class="client-info-box">
           <div class="client-name">
             <span>Juan Pérez García</span>
-            <span class="badge badge-success" style="margin-left: 12px;">Plan Premium</span>
+            <span class="badge badge-success" style="margin-left: 12px;">Registrado</span>
           </div>
           <div class="grid cols-2" style="margin-top: 12px;">
             <div>
@@ -87,12 +87,14 @@
           <article class="card" style="margin-bottom: 16px;">
             <div style="display:flex; gap:12px; align-items:center; justify-content:space-between;">
               <div style="display:flex; gap:12px; align-items:center;">
-                <div style="width:80px; height:80px; background:#0d1117; border:1px dashed #30363d; border-radius:12px; display:flex; align-items:center; justify-content:center; color: var(--muted);">
+                <div
+                  style="width:80px; height:80px; background:#0d1117; border:1px dashed #30363d; border-radius:12px; display:flex; align-items:center; justify-content:center; color: var(--muted);">
                   IMG</div>
                 <div>
                   <h3 style="margin:0 0 8px 0;">Zapatilla Runner X</h3>
                   <div class="muted">Talla 40-44</div>
-                  <p style="font-size: 0.9rem; color: var(--muted);">Zapatilla de running de alto rendimiento con amortiguación premium.</p>
+                  <p style="font-size: 0.9rem; color: var(--muted);">Zapatilla de running de alto rendimiento con
+                    amortiguación premium.</p>
                   <div style="margin: 8px 0;">
                     <span style="font-size: 1.2rem; font-weight: 700;">S/ 189.00</span>
                   </div>
@@ -105,13 +107,15 @@
           <article class="card" style="margin-bottom: 16px;">
             <div style="display:flex; gap:12px; align-items:center; justify-content:space-between;">
               <div style="display:flex; gap:12px; align-items:center;">
-                <div style="width:80px; height:80px; background:#0d1117; border:1px dashed #30363d; border-radius:12px; display:flex; align-items:center; justify-content:center; color: var(--muted);">
+                <div
+                  style="width:80px; height:80px; background:#0d1117; border:1px dashed #30363d; border-radius:12px; display:flex; align-items:center; justify-content:center; color: var(--muted);">
                   IMG
                 </div>
                 <div>
                   <h3 style="margin:0 0 8px 0;">Sandalia Urban Lite</h3>
                   <div class="muted">Talla 35-40</div>
-                  <p style="font-size: 0.9rem; color: var(--muted);">Sandalia ligera y cómoda ideal para uso diario, con suela antideslizante.</p>
+                  <p style="font-size: 0.9rem; color: var(--muted);">Sandalia ligera y cómoda ideal para uso diario, con
+                    suela antideslizante.</p>
                   <div style="margin: 8px 0;">
                     <span style="font-size: 1.2rem; font-weight: 700;">S/ 89.00</span>
                   </div>
@@ -125,11 +129,12 @@
         <aside class="card">
           <h3>Resumen del Pedido</h3>
           <!-- Producto simulado para maqueta -->
-          <div class="cart-item" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 1px dashed var(--muted); padding-bottom: 8px;">
+          <div class="cart-item"
+            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 1px dashed var(--muted); padding-bottom: 8px;">
             <div class="cart-item-info">
               <div class="cart-item-name" style="font-weight: bold;">Zapatilla Runner X</div>
               <div class="cart-item-price" style="font-size: 0.9rem;">
-                Talla: 42 | Cant: 1 | 
+                Talla: 42 | Cant: 1 |
                 <span style="text-decoration: line-through; color: var(--muted);">S/ 189.00</span>
                 <span style="color: var(--ok); font-weight: 700;">S/ 170.10</span>
               </div>
@@ -141,15 +146,16 @@
 
           <div style="margin:8px 0; display:flex; justify-content:space-between;">
             <span>Subtotal</span>
-            <span>S/ 170.10</span>
+            <span>S/ 189.00</span>
           </div>
           <div style="margin:8px 0; display:flex; justify-content:space-between; color: var(--ok); font-weight: 600;">
-            <span>Descuento (10%)</span>
+            <span>Descuento (10% - Cliente Registrado)</span>
             <span>- S/ 18.90</span>
           </div>
-          <div style="margin:16px 0; display:flex; justify-content:space-between; font-weight:bold; font-size: 1.3rem; color: var(--accent);">
+          <div
+            style="margin:16px 0; display:flex; justify-content:space-between; font-weight:bold; font-size: 1.3rem; color: var(--accent);">
             <span>TOTAL</span>
-            <span>S/ 151.20</span>
+            <span>S/ 170.10</span>
           </div>
 
           <div style="margin-top:20px;">
@@ -175,7 +181,8 @@
 
   </main>
 
-  <footer>CalzaSmart • Sistema de Ventas con Gestión de Suscripciones</footer>
-
+  <footer>CalzaSmart • Sistema de Ventas e Inventario</footer>
+  <script src="main.js"></script>
 </body>
+
 </html>
