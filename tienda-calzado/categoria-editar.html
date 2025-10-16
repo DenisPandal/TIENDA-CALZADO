@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Editar Categorías • CalzaSmart</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .categoria-edit-container {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 24px;
+      margin-top: 24px;
+    }
+
+    .categoria-form-section {
+      background: var(--panel);
+      border: 2px solid var(--accent);
+      border-radius: 16px;
+      padding: 24px;
+    }
+
+    .categoria-form-section h2 {
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+
+    .categoria-list-section {
+      background: var(--panel);
+      border: 2px solid var(--accent);
+      border-radius: 16px;
+      padding: 24px;
+      max-height: 600px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .categoria-list-section h2 {
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+
+    .categoria-list-content {
+      overflow-y: auto;
+      flex: 1;
+    }
+
+    .categoria-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px;
+      background: var(--bg);
+      border-radius: 10px;
+      margin-bottom: 10px;
+      border-left: 4px solid var(--accent);
+    }
+
+    .categoria-item-name {
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .categoria-item-actions {
+      display: flex;
+      gap: 6px;
+    }
+
+    .btn-small {
+      padding: 6px 10px;
+      font-size: 0.80rem;
+    }
+
+    #btnAgregar {
+      background: var(--accent);
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+      margin-top: 12px;
+      align-self: center;
+    }
+
+    #btnAgregar:hover {
+      background: var(--accent);
+      color: var(--bg);
+    }
+
+    #toggleForm {
+      display: none;
+    }
+
+    .mini-form {
+      display: none;
+      background: var(--bg);
+      border: 2px solid var(--accent);
+      border-radius: 10px;
+      padding: 16px;
+      margin-top: 16px;
+    }
+
+    #toggleForm:checked + .mini-form {
+      display: block;
+      animation: aparecer 0.3s ease;
+    }
+
+    @keyframes aparecer {
+      from {
+        opacity: 0;
+        transform: scale(0.98);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .mini-form h3 {
+      color: var(--accent);
+      margin-bottom: 12px;
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 0.9rem;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      border: 2px solid var(--accent);
+      background: var(--bg);
+      color: var(--text);
+      font-size: 0.95rem;
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: var(--ok);
+      box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    @media (max-width: 900px) {
+      .categoria-edit-container {
+        grid-template-columns: 1fr;
+      }
+
+      .categoria-list-section {
+        max-height: 400px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="brand">CalzaSmart</div>
+    <nav>
+      <a href="main.html">Inicio</a>
+      <a href="catalogo.html">Catálogo</a>
+      <a href="producto-crud.html">CRUD Productos</a>
+      <a href="producto-crear.html">Crear Producto</a>
+      <a href="publicidad.html">Publicidad</a>
+      <a href="metricas.html">Métricas</a>
+      <a href="gestion.html">Gestión</a>
+      <a href="contacto.html">Contacto</a>
+      <a href="cliente-nuevo.html">Clientes</a>
+      <a href="categoria-editar.html" class="active">Categorías</a>
+      <a href="login.html" class="login-link">Login</a>
+    </nav>
+    <button id="toggle-theme">
+      <img src="imagenes/logoluna.png" alt="Cambiar tema" width="30">
+    </button>
+  </header>
+
+  <main class="container">
+
+    <section class="panel">
+      <h1>Editar Categorías</h1>
+      <p class="tag">Administra y actualiza las categorías de productos</p>
+    </section>
+
+    <div class="categoria-edit-container">
+      <div class="categoria-form-section">
+        <h2>Actualizar Categoría</h2>
+        <form>
+          <div class="form-group">
+            <label>Seleccionar Categoría *</label>
+            <select required>
+              <option value="">-- Seleccione una categoría --</option>
+              <option value="running">Running</option>
+              <option value="casual">Casual</option>
+              <option value="formal">Formal</option>
+              <option value="trekking">Trekking</option>
+              <option value="deportivo">Deportivo</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Nombre de la Categoría *</label>
+            <input type="text" placeholder="Ej: Running, Casual, Formal..." required>
+          </div>
+
+          <div class="form-group">
+            <label>Descripción</label>
+            <textarea rows="4" placeholder="Descripción detallada de la categoría..."></textarea>
+          </div>
+
+          <div style="display: flex; gap: 10px; flex-direction: column;">
+            <button type="submit" class="btn success" style="width: 100%;">Guardar Cambios</button>
+            <button type="reset" class="btn secondary" style="width: 100%;">Limpiar</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="categoria-list-section">
+        <h2>Categorías Existentes</h2>
+        <div class="categoria-list-content">
+          <div class="categoria-item">
+            <div>
+              <div class="categoria-item-name">Running</div>
+              <div style="font-size: 0.80rem; color: var(--muted);">Alto rendimiento</div>
+            </div>
+            <div class="categoria-item-actions">
+              <button class="btn secondary btn-small">Editar</button>
+              <button class="btn delete btn-small">Eliminar</button>
+            </div>
+          </div>
+
+          <div class="categoria-item">
+            <div>
+              <div class="categoria-item-name">Casual</div>
+              <div style="font-size: 0.80rem; color: var(--muted);">Uso diario</div>
+            </div>
+            <div class="categoria-item-actions">
+              <button class="btn secondary btn-small">Editar</button>
+              <button class="btn delete btn-small">Eliminar</button>
+            </div>
+          </div>
+
+          <div class="categoria-item">
+            <div>
+              <div class="categoria-item-name">Formal</div>
+              <div style="font-size: 0.80rem; color: var(--muted);">Zapatos elegantes</div>
+            </div>
+            <div class="categoria-item-actions">
+              <button class="btn secondary btn-small">Editar</button>
+              <button class="btn delete btn-small">Eliminar</button>
+            </div>
+          </div>
+
+          <div class="categoria-item">
+            <div>
+              <div class="categoria-item-name">Trekking</div>
+              <div style="font-size: 0.80rem; color: var(--muted);">Actividades outdoor</div>
+            </div>
+            <div class="categoria-item-actions">
+              <button class="btn secondary btn-small">Editar</button>
+              <button class="btn delete btn-small">Eliminar</button>
+            </div>
+          </div>
+
+          <div class="categoria-item">
+            <div>
+              <div class="categoria-item-name">Deportivo</div>
+              <div style="font-size: 0.80rem; color: var(--muted);">Múltiples deportes</div>
+            </div>
+            <div class="categoria-item-actions">
+              <button class="btn secondary btn-small">Editar</button>
+              <button class="btn delete btn-small">Eliminar</button>
+            </div>
+          </div>
+        </div>
+        
+        <label for="toggleForm" id="btnAgregar">Agregar Categoría</label>
+        <input type="checkbox" id="toggleForm">
+        <div class="mini-form">
+          <h3>Nueva Categoría</h3>
+          <form>
+            <div class="form-group">
+              <label>Nombre *</label>
+              <input type="text" placeholder="Ej: Infantil, Verano, etc.">
+            </div>
+
+            <div class="form-group">
+              <label>Descripción</label>
+              <textarea rows="3" placeholder="Breve descripción..."></textarea>
+            </div>
+
+            <div style="display: flex; gap: 10px; flex-direction: column;">
+              <button type="submit" class="btn success" style="width: 100%;">Guardar</button>
+              <button type="reset" class="btn secondary" style="width: 100%;">Cancelar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>CalzaSmart • Sistema de Ventas con Gestión de Categorías</footer>
+  <script src="main.js"></script>
+</body>
+
+</html>
