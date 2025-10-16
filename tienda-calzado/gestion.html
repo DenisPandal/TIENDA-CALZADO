@@ -17,13 +17,12 @@
       <a href="catalogo.html">Catálogo</a>
       <a href="producto-crud.html">CRUD Productos</a>
       <a href="producto-crear.html">Crear Producto</a>
+      <a href="categoria-editar.html">Categorías</a>
       <a href="publicidad.html">Publicidad</a>
       <a href="metricas.html">Métricas</a>
-      <a href="gestion.html">Gestión</a>
-      <a href="contacto.html">Contacto</a>
+      <a href="gestion.html" class="active">Gestión</a>
       <a href="cliente-nuevo.html">Clientes</a>
-      <a href="suscripciones.html">Suscripciones</a>
-      <a href="adicional2.html">Sucursales</a>
+      <a href="contacto.html">Contacto</a>
       <a href="adicional3.html">Preguntas</a>
       <a href="login.html" class="login-link">Login</a>
     </nav>
@@ -35,24 +34,42 @@
   <main class="container">
 
     <section class="panel">
-      <h1>Gestión</h1>
-      <p>Administración del sistema: usuarios, roles, permisos, reglas de descuento por suscripción.</p>
+      <h1>Gestión del Sistema</h1>
+      <p class="tag">Administración y edición de elementos clave</p>
+      <p style="margin-top: 12px; color: var(--muted);">
+        Accede a las secciones editables del sistema para gestionar productos, categorías, clientes y campañas.
+      </p>
+    </section>
+
+    <section class="panel">
+      <h2>Gestiona</h2>
       <div class="grid cols-2">
         <div class="card">
-          <h3>Usuarios</h3>
-          <p>Alta/Baja/Modificación (maqueta)</p>
-          <a class="btn secondary" href="#">Administrar</a>
+          <h3>Gestión de Productos</h3>
+          <p>Crea, edita y elimina productos del catálogo. Controla precios, stock y descripciones de cada artículo.</p>
+          <a class="btn secondary" href="producto-crud.html">Administrar</a>
         </div>
         <div class="card">
-          <h3>Reglas de descuento</h3>
-          <p>Defina el % base para suscritos y reglas por categoría.</p>
-          <a class="btn secondary" href="suscripciones.html">Ver productos</a>
+          <h3>Gestión de Categorías</h3>
+          <p>Edita y administra las categorías de productos. Crea nuevas categorías o modifica las existentes.</p>
+          <a class="btn secondary" href="categoria-editar.html">Administrar</a>
+        </div>
+        <div class="card">
+          <h3>Gestión de Clientes</h3>
+          <p>Visualiza, edita y elimina clientes registrados. Accede al historial y datos de cada cliente.</p>
+          <a class="btn secondary" href="clientes_registrados.html">Administrar</a>
+        </div>
+        <div class="card">
+          <h3>Campañas y Publicidad</h3>
+          <p>Gestiona campañas promocionales y descuentos. Define políticas de descuento para clientes registrados.</p>
+          <a class="btn secondary" href="publicidad.html">Administrar</a>
         </div>
       </div>
     </section>
 
   </main>
-  <footer>CalzaSmart • Proyecto Ingeniería de Sistemas (Semana 4) — Maqueta HTML</footer>
+
+  <footer>CalzaSmart • Sistema de Gestión de Ventas</footer>
   <script src="main.js"></script>
 </body>
 
