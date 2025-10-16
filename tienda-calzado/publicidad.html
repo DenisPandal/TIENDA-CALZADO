@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Planes y Publicidad • CalzaSmart</title>
+  <title>Campañas y Publicidad • CalzaSmart</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -15,8 +15,10 @@
       <a href="main.html">Inicio</a>
       <a href="producto-crud.html">Gestión Productos</a>
       <a href="adicional1.html">Registro Ventas</a>
-      <a href="publicidad.html" class="active">Planes Suscripción</a>
+      <a href="publicidad.html" class="active">Campañas</a>
       <a href="metricas.html">Métricas</a>
+      <a href="categoria-editar.html">Categorías</a>
+      <a href="cliente-nuevo.html">Clientes</a>
       <a href="login.html" class="login-link">Login</a>
     </nav>
     <button id="toggle-theme">
@@ -28,95 +30,94 @@
 
     <section class="panel">
       <h1>Campañas y Publicidad</h1>
-      <p class="tag">Banners promocionales y ofertas</p>
+      <p class="tag">Banners promocionales y ofertas especiales</p>
       <div class="grid cols-3">
         <div class="card">
           <div class="tag">Campaña</div>
           <h3>Vuelta a clases</h3>
-          <p>Hasta 15% para suscriptores en zapatillas escolares.</p>
-          <div
-            style="height:120px;border-radius:12px;border:1px dashed #30363d;display:flex;align-items:center;justify-content:center">
+          <p>Hasta 15% en zapatillas escolares para clientes registrados.</p>
+          <div style="height:120px;border-radius:12px;border:1px dashed #30363d;display:flex;align-items:center;justify-content:center">
             Banner</div>
         </div>
         <div class="card">
           <div class="tag">Campaña</div>
           <h3>Full Running</h3>
-          <p>2x1 en calcetines técnicos + 10% suscrito.</p>
-          <div
-            style="height:120px;border-radius:12px;border:1px dashed #30363d;display:flex;align-items:center;justify-content:center">
+          <p>2x1 en calcetines técnicos. Descuentos para registrados.</p>
+          <div style="height:120px;border-radius:12px;border:1px dashed #30363d;display:flex;align-items:center;justify-content:center">
             Banner</div>
         </div>
         <div class="card">
           <div class="tag">Campaña</div>
           <h3>Fin de temporada</h3>
-          <p>Hasta 30% off modelos 2024.</p>
-          <div
-            style="height:120px;border-radius:12px;border:1px dashed #30363d;display:flex;align-items:center;justify-content:center">
+          <p>Hasta 30% off en modelos 2024 para todos.</p>
+          <div style="height:120px;border-radius:12px;border:1px dashed #30363d;display:flex;align-items:center;justify-content:center">
             Banner</div>
         </div>
       </div>
     </section>
 
     <section class="panel">
-      <h2>Planes de Suscripción</h2>
-      <p class="tag">Atrae a tus clientes con beneficios exclusivos</p>
-      <div class="grid cols-3" style="margin-top: 24px;">
+      <h2>Tipos de Clientes</h2>
+      <p class="tag">Conoce los beneficios según tu estado de registro</p>
+      <div class="grid cols-2" style="margin-top: 24px;">
+        
         <div class="card plan-card">
           <div style="text-align: center;">
-            <h3 style="color: var(--info); font-size: 1.5rem; margin-bottom: 8px;">Plan Básico</h3>
-            <div class="plan-price" style="color: var(--info);">5%</div>
-            <p style="color: var(--muted); margin-bottom: 20px;">Descuento permanente</p>
+            <h3 style="color: var(--muted); font-size: 1.5rem; margin-bottom: 8px;">Cliente No Registrado</h3>
+            <div class="plan-price" style="color: var(--muted);">0%</div>
+            <p style="color: var(--muted); margin-bottom: 20px;">Sin descuentos</p>
           </div>
           <ul class="plan-features">
-            <li>5% de descuento en todas las compras</li>
-            <li>Acceso a promociones mensuales</li>
-            <li>Acumulación de puntos</li>
+            <li>0% de descuento en compras</li>
+            <li>Acceso limitado a promociones</li>
+            <li>Precios normales en todos los productos</li>
           </ul>
-          <div style="text-align: center; padding-top: 16px; border-top: 2px solid var(--info);">
-            <div style="font-size: 1.8rem; font-weight: 800; color: var(--info);">S/ 29.90</div>
-            <div style="color: var(--muted); font-size: 0.9rem;">por mes</div>
+          <div style="text-align: center; padding-top: 16px; border-top: 2px solid var(--muted);">
+            <div style="font-size: 1.8rem; font-weight: 800; color: var(--muted);">Gratis</div>
+            <div style="color: var(--muted); font-size: 0.9rem;">sin registro</div>
           </div>
         </div>
+
         <div class="card plan-card plan-popular">
-          <div class="plan-badge">Más Popular</div>
+          <div class="plan-badge">Recomendado</div>
           <div style="text-align: center;">
-            <h3 style="color: var(--ok); font-size: 1.5rem; margin-bottom: 8px;">Plan Premium</h3>
+            <h3 style="color: var(--ok); font-size: 1.5rem; margin-bottom: 8px;">Cliente Registrado</h3>
             <div class="plan-price" style="color: var(--ok);">10%</div>
-            <p style="color: var(--muted); margin-bottom: 20px;">Mayor ahorro garantizado</p>
+            <p style="color: var(--muted); margin-bottom: 20px;">Descuento garantizado</p>
           </div>
           <ul class="plan-features">
-            <li>10% de descuento permanente</li>
-            <li>Promociones exclusivas semanales</li>
-            <li>Doble acumulación de puntos</li>
-            <li>Envío gratis en Lima Metropolitana</li>
+            <li>10% de descuento en todas las compras</li>
+            <li>Acceso a promociones exclusivas</li>
+            <li>Ofertas especiales mensuales</li>
           </ul>
           <div style="text-align: center; padding-top: 16px; border-top: 2px solid var(--ok);">
-            <div style="font-size: 1.8rem; font-weight: 800; color: var(--ok);">S/ 49.90</div>
-            <div style="color: var(--muted); font-size: 0.9rem;">por mes</div>
+            <a href="cliente-nuevo.html" class="btn success" style="width: 100%; text-align: center; text-decoration: none;">Registrarse Ahora</a>
           </div>
         </div>
-        <div class="card plan-card">
-          <div style="text-align: center;">
-            <h3 style="color: var(--warn); font-size: 1.5rem; margin-bottom: 8px;">Plan VIP</h3>
-            <div class="plan-price" style="color: var(--warn);">15%</div>
-            <p style="color: var(--muted); margin-bottom: 20px;">Beneficios exclusivos</p>
-          </div>
-          <ul class="plan-features">
-            <li>15% de descuento permanente</li>
-            <li>Acceso VIP a todas las promociones</li>
-            <li>Triple acumulación de puntos</li>
-            <li>Envío express gratis a nivel nacional</li>
-          </ul>
-          <div style="text-align: center; padding-top: 16px; border-top: 2px solid var(--warn);">
-            <div style="font-size: 1.8rem; font-weight: 800; color: var(--warn);">S/ 79.90</div>
-            <div style="color: var(--muted); font-size: 0.9rem;">por mes</div>
-          </div>
+
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>¿Por qué registrarse?</h2>
+      <div class="grid cols-3">
+        <div class="card">
+          <h3>✓ Descuentos Inmediatos</h3>
+          <p>Obtén 10% de descuento en todas tus compras desde el primer momento de tu registro.</p>
+        </div>
+        <div class="card">
+          <h3>✓ Ofertas Exclusivas</h3>
+          <p>Accede a promociones especiales y campañas diseñadas solo para clientes registrados.</p>
+        </div>
+        <div class="card">
+          <h3>✓ Programa de Puntos</h3>
+          <p>Acumula puntos en cada compra y canjéalos por descuentos adicionales o productos.</p>
         </div>
       </div>
     </section>
 
   </main>
-  <footer>CalzaSmart • Proyecto Ingeniería de Sistemas — Maqueta HTML</footer>
+  <footer>CalzaSmart • Sistema de Ventas y Gestión de Inventario</footer>
   <script src="main.js"></script>
 </body>
 
