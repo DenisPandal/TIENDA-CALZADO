@@ -17,12 +17,11 @@
             <a href="catalogo.html">Catálogo</a>
             <a href="producto-crud.html">CRUD Productos</a>
             <a href="producto-crear.html">Crear Producto</a>
+            <a href="categoria-editar.html">Categorías</a>
             <a href="publicidad.html">Publicidad</a>
             <a href="metricas.html">Métricas</a>
             <a href="gestion.html">Gestión</a>
             <a href="cliente-nuevo.html" class="active">Clientes</a>
-            <a href="suscripciones.html">Suscripciones</a>
-            <a href="adicional2.html">Sucursales</a>
             <a href="adicional3.html">Preguntas</a>
             <a href="login.html" class="login-link">Login</a>
         </nav>
@@ -35,7 +34,7 @@
 
         <section class="panel">
             <h1>Registrar Nuevo Cliente</h1>
-            <p class="tag">Complete los datos del cliente y seleccione un plan de suscripción</p>
+            <p class="tag">Complete los datos del cliente para su registro</p>
 
             <form style="margin-top: 24px;">
                 <h3>Datos Personales</h3>
@@ -68,26 +67,18 @@
 
                 <div class="divider"></div>
 
-                <h3>Plan de Suscripción</h3>
-                <div class="form-group" style="margin-top: 16px;">
-                    <label>Seleccione el Plan *</label>
-                    <select id="plan-select" onchange="mostrarInfoPlan()">
-                        <option value="ninguno">Sin suscripción (0% descuento)</option>
-                        <option value="basico">Plan Básico - 5% descuento (S/ 29.90/mes)</option>
-                        <option value="premium">Plan Premium - 10% descuento (S/ 49.90/mes)</option>
-                        <option value="vip">Plan VIP - 15% descuento (S/ 79.90/mes)</option>
-                    </select>
-                </div>
-
-                <div id="info-plan-seleccionado" class="hidden" style="margin-top: 16px;">
-                    <div class="alert alert-info">
-                        <strong>Beneficios del plan seleccionado:</strong>
-                        <ul id="beneficios-lista" style="margin: 12px 0 0 20px; line-height: 1.8;"></ul>
-                    </div>
+                <h3>Beneficios al Registrarse</h3>
+                <div class="alert alert-info" style="margin-top: 16px;">
+                    <strong>¡Acceso a beneficios exclusivos!</strong>
+                    <ul style="margin: 12px 0 0 20px; line-height: 1.8;">
+                        <li>10% de descuento permanente en todas tus compras</li>
+                        <li>Acceso a promociones exclusivas y campañas especiales</li>
+                        <li>Acumulación de puntos por cada compra realizada</li>
+                    </ul>
                 </div>
 
                 <div style="margin-top: 32px; display: flex; gap: 12px;">
-                    <button type="button" class="btn success" onclick="guardarCliente()">Guardar Cliente</button>
+                    <button type="submit" class="btn success">Guardar Cliente</button>
                     <a href="clientes_registrados.html" class="btn secondary">Cancelar</a>
                 </div>
             </form>
@@ -95,85 +86,8 @@
 
     </main>
 
-    <footer>CalzaSmart • Sistema de Ventas con Gestión de Suscripciones</footer>
+    <footer>CalzaSmart • Sistema de Ventas e Inventario</footer>
     <script src="main.js"></script>
-    <script>
-        function mostrarInfoPlan() {
-            const plan = document.getElementById('plan-select').value;
-            const infoDiv = document.getElementById('info-plan-seleccionado');
-            const lista = document.getElementById('beneficios-lista');
-
-            if (plan === 'ninguno') {
-                infoDiv.classList.add('hidden');
-                return;
-            }
-
-            infoDiv.classList.remove('hidden');
-
-            let beneficios = [];
-            if (plan === 'basico') {
-                beneficios = [
-                    '5% de descuento permanente en todas las compras',
-                    'Acceso a promociones mensuales',
-                    'Acumulación de puntos',
-                    'Soporte prioritario por email'
-                ];
-            } else if (plan === 'premium') {
-                beneficios = [
-                    '10% de descuento permanente en todas las compras',
-                    'Promociones exclusivas semanales',
-                    'Doble acumulación de puntos',
-                    'Envío gratis en Lima Metropolitana',
-                    'Soporte prioritario 24/7'
-                ];
-            } else if (plan === 'vip') {
-                beneficios = [
-                    '15% de descuento permanente en todas las compras',
-                    'Acceso anticipado a nuevos productos',
-                    'Triple acumulación de puntos',
-                    'Envío gratis a nivel nacional',
-                    'Asesor personal de compras',
-                    'Eventos exclusivos VIP'
-                ];
-            }
-
-            lista.innerHTML = beneficios.map(b => '<li>' + b + '</li>').join('');
-        }
-
-        function guardarCliente() {
-            const nombre = document.getElementById('nombre').value;
-            const dni = document.getElementById('dni').value;
-            const telefono = document.getElementById('telefono').value;
-            const email = document.getElementById('email').value;
-            const fechaNacimiento = document.getElementById('fecha-nacimiento').value;
-            const direccion = document.getElementById('direccion').value;
-            const plan = document.getElementById('plan-select').options[document.getElementById('plan-select').selectedIndex].text;
-
-            if (!nombre || !dni || !telefono) {
-                alert('Por favor complete los campos obligatorios (*)');
-                return;
-            }
-
-            const nuevoCliente = {
-                nombre: nombre,
-                dni: dni,
-                telefono: telefono,
-                email: email,
-                fechaNacimiento: fechaNacimiento,
-                direccion: direccion,
-                plan: plan
-            };
-
-            const clientes = JSON.parse(localStorage.getItem('clientes')) || [];
-
-            clientes.push(nuevoCliente);
-
-            localStorage.setItem('clientes', JSON.stringify(clientes));
-
-            alert('Cliente ' + nombre + ' registrado exitosamente.');
-            window.location.href = 'clientes_registrados.html';
-        }
-    </script>
 </body>
 
 </html>
