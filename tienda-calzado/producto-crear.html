@@ -6,6 +6,33 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Crear producto • CalzaSmart</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    .categoria-selector {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .categoria-selector select {
+      flex: 1;
+    }
+
+    .categoria-selector a {
+      padding: 10px 16px;
+      background: var(--info);
+      color: white;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.2s;
+    }
+
+    .categoria-selector a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+  </style>
 </head>
 
 <body>
@@ -17,14 +44,12 @@
       <a href="catalogo.html">Catálogo</a>
       <a href="producto-crud.html">CRUD Productos</a>
       <a href="producto-crear.html">Crear Producto</a>
-      <a href="publicidad.html">Publicidad</a>
+      <a href="categoria-editar.html">Categorias</a>
       <a href="metricas.html">Métricas</a>
       <a href="gestion.html">Gestión</a>
+      <a href="publicidad.html">Publicidad</a>
       <a href="contacto.html">Contacto</a>
       <a href="cliente-nuevo.html">Clientes</a>
-      <a href="suscripciones.html">Suscripciones</a>
-      <a href="adicional2.html">Sucursales</a>
-      <a href="adicional3.html">Preguntas</a>
       <a href="login.html" class="login-link">Login</a>
     </nav>
     <button id="toggle-theme">
@@ -47,11 +72,18 @@
         </div>
         <div>
           <label>Categoría</label>
-          <div style="display:flex; gap:10px; align-items:center;">
-            <select id="categoria"></select>
-            <button type="button" id="btn-nueva-cat" class="btn secondary">+</button>
-            <button type="button" id="btn-editar-cat" class="btn secondary">✎</button>
-            <button type="button" id="btn-eliminar-cat" class="btn secondary">🗑️</button>
+          <div class="categoria-selector">
+            <select id="categoria">
+              <option value="">-- Seleccione --</option>
+              <option value="running">Running</option>
+              <option value="casual">Casual</option>
+              <option value="formal">Formal</option>
+              <option value="trekking">Trekking</option>
+              <option value="deportivo">Deportivo</option>
+            </select>
+            <div style="grid-column:1/-1;display:flex;gap:10px">
+              <a class="btn secondary" href="categoria-editar.html">Editar</a>
+            </div>
           </div>
         </div>
         <div>
@@ -67,7 +99,7 @@
           <input type="number" placeholder="20">
         </div>
         <div>
-          <label>Descuento suscrito (%)</label>
+          <label>Descuento (%)</label>
           <input type="number" step="1" placeholder="10">
         </div>
         <div>
@@ -94,9 +126,8 @@
     </section>
 
   </main>
-  <footer>CalzaSmart • Proyecto Ingeniería de Sistemas — Maqueta HTML</footer>
+  <footer>CalzaSmart • Proyecto Ingeniería de Sistemas – Maqueta HTML</footer>
   <script src="main.js"></script>
-  <script src="crear.js"></script>
 </body>
 
 </html>
