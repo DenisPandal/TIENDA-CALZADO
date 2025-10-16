@@ -17,11 +17,11 @@
       <a href="catalogo.html">Catálogo</a>
       <a href="producto-crud.html">CRUD Productos</a>
       <a href="producto-crear.html">Crear Producto</a>
+      <a href="categoria-editar.html">Categorías</a>
       <a href="publicidad.html">Publicidad</a>
       <a href="metricas.html">Métricas</a>
       <a href="gestion.html">Gestión</a>
       <a href="cliente-nuevo.html">Clientes</a>
-      <a href="suscripciones.html">Suscripciones</a>
       <a href="contacto.html">Contacto</a>
       <a href="adicional2.html">Sucursales</a>
       <a href="adicional3.html">Preguntas</a>
@@ -39,7 +39,7 @@
       <p class="tag">Gestión integral de ventas, inventario y clientes</p>
       <p style="margin-top: 12px; color: var(--muted);">
         Bienvenido al sistema de gestión. Aquí podrás administrar productos, realizar ventas,
-        gestionar clientes y sus suscripciones con descuentos automáticos.
+        gestionar clientes y ver métricas detalladas del negocio.
       </p>
     </section>
 
@@ -49,8 +49,8 @@
         <a class="btn" href="adicional1.html">Nuevo Pedido</a>
         <a class="btn secondary" href="producto-crud.html">Gestionar Productos</a>
         <a class="btn secondary" href="catalogo.html">Ver Catálogo</a>
-        <a class="btn info" href="cliente-nuevo.html">Ver Clientes</a>
-        <a class="btn success" href="suscripciones.html">Suscripciones</a>
+        <a class="btn info" href="clientes_registrados.html">Ver Clientes</a>
+        <a class="btn success" href="categoria-editar.html">Editar Categoría</a>
         <a class="btn secondary" href="metricas.html">Ver Métricas</a>
         <a class="btn secondary" href="publicidad.html">Campañas</a>
         <a class="btn secondary" href="gestion.html">Gestión</a>
@@ -59,29 +59,23 @@
 
     <section class="grid cols-2">
       <div class="panel">
-        <h2>Sistema de Suscripciones</h2>
-        <p>Los clientes suscritos obtienen descuentos automáticos en cada compra:</p>
-
+        <h2>Resumen de Ventas</h2>
         <div class="stats-mini">
           <div class="stat-item">
-            <div class="stat-value">32</div>
-            <div class="stat-label">Plan Básico</div>
-            <div style="color: var(--ok); font-weight: 700; margin-top: 4px;">5%</div>
+            <div class="stat-value">145</div>
+            <div class="stat-label">Ventas Totales</div>
+            <div style="color: var(--ok); font-weight: 700; margin-top: 4px;">Esta semana</div>
           </div>
           <div class="stat-item">
-            <div class="stat-value">45</div>
-            <div class="stat-label">Plan Premium</div>
-            <div style="color: var(--ok); font-weight: 700; margin-top: 4px;">10%</div>
+            <div class="stat-value">S/ 28,450</div>
+            <div class="stat-label">Ingresos</div>
+            <div style="color: var(--ok); font-weight: 700; margin-top: 4px;">Este mes</div>
           </div>
           <div class="stat-item">
-            <div class="stat-value">12</div>
-            <div class="stat-label">Plan VIP</div>
-            <div style="color: var(--ok); font-weight: 700; margin-top: 4px;">15%</div>
+            <div class="stat-value">342</div>
+            <div class="stat-label">Clientes</div>
+            <div style="color: var(--ok); font-weight: 700; margin-top: 4px;">Registrados</div>
           </div>
-        </div>
-
-        <div style="margin-top: 20px;">
-          <a href="suscripciones.html" class="btn success" style="width: 100%;">Ver Detalles de Planes</a>
         </div>
       </div>
 
@@ -91,7 +85,6 @@
           <thead>
             <tr>
               <th>Cliente</th>
-              <th>Plan</th>
               <th>Monto</th>
               <th>Estado</th>
             </tr>
@@ -99,20 +92,17 @@
           <tbody>
             <tr>
               <td>Juan Pérez</td>
-              <td><span class="badge badge-success">Premium</span></td>
-              <td>S/ 340.20</td>
+              <td style="font-weight: 700; color: var(--accent);">S/ 340.20</td>
               <td><span class="badge badge-success">Pagado</span></td>
             </tr>
             <tr>
               <td>María López</td>
-              <td><span class="badge badge-info">Básico</span></td>
-              <td>S/ 179.55</td>
+              <td style="font-weight: 700; color: var(--accent);">S/ 179.55</td>
               <td><span class="badge badge-warning">Pendiente</span></td>
             </tr>
             <tr>
               <td>Carlos Ruiz</td>
-              <td><span class="badge badge-warning">VIP</span></td>
-              <td>S/ 387.80</td>
+              <td style="font-weight: 700; color: var(--accent);">S/ 387.80</td>
               <td><span class="badge badge-success">Pagado</span></td>
             </tr>
           </tbody>
@@ -121,29 +111,26 @@
     </section>
 
     <section class="panel">
-      <h2>Beneficios del Sistema de Suscripciones</h2>
+      <h2>Beneficios del Sistema</h2>
       <div class="grid cols-3">
         <div class="card">
-          <h3>✓ Descuentos Automáticos</h3>
-          <p>Al registrar el DNI del cliente, el sistema detecta automáticamente su plan
-            y aplica el descuento correspondiente sin intervención manual.</p>
-        </div>
-        <div class="card">
-          <h3>✓ Fidelización de Clientes</h3>
-          <p>Los clientes suscritos realizan más compras y generan mayor facturación
-            mensual. Aumenta la retención en un 40%.</p>
-        </div>
-        <div class="card">
           <h3>✓ Gestión Simplificada</h3>
-          <p>Control total de clientes, historial de compras y seguimiento de beneficios.
-            Todo centralizado en un solo sistema.</p>
+          <p>Administra productos, clientes, pedidos y categorías en un solo lugar. Todo centralizado para máxima eficiencia.</p>
+        </div>
+        <div class="card">
+          <h3>✓ Reportes en Tiempo Real</h3>
+          <p>Visualiza métricas actualizadas sobre ventas, ingresos, cantidad de clientes y tendencias del negocio.</p>
+        </div>
+        <div class="card">
+          <h3>✓ Control Total</h3>
+          <p>Acceso completo a todas las funciones: catálogo, inventario, campañas y análisis de desempeño.</p>
         </div>
       </div>
     </section>
 
   </main>
 
-  <footer>CalzaSmart • Sistema de Ventas con Gestión de Suscripciones</footer>
+  <footer>CalzaSmart • Sistema de Ventas y Gestión de Inventario</footer>
   <script src="main.js"></script>
 </body>
 
