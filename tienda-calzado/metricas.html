@@ -16,7 +16,7 @@
       <a href="main.html">Inicio</a>
       <a href="producto-crud.html">Gestión Productos</a>
       <a href="adicional1.html">Registro Ventas</a>
-      <a href="publicidad.html">Planes Suscripción</a>
+      <a href="publicidad.html">Campañas</a>
       <a href="metricas.html" class="active">Métricas</a>
       <a href="login.html" class="login-link">Login</a>
     </nav>
@@ -31,39 +31,39 @@
 
     <section class="panel">
       <h1>Métricas y Análisis</h1>
-      <p class="tag">Variación de ventas y suscripciones</p>
+      <p class="tag">Desempeño de ventas e indicadores clave</p>
     </section>
 
     <section class="grid cols-3">
       <div class="card kpi">
-        <div class="label">Variación de Ventas</div>
-        <div class="value" style="color: var(--ok);">+12%</div>
+        <div class="label">Cantidad de Ventas</div>
+        <div class="value" style="color: var(--ok);">145</div>
         <div class="tag">vs. semana pasada</div>
       </div>
       <div class="card kpi">
-        <div class="label">Variación Suscripciones</div>
-        <div class="value" style="color: var(--ok);">+8%</div>
-        <div class="tag">vs. mes pasado</div>
+        <div class="label">Ingresos Totales</div>
+        <div class="value">S/ 28,450</div>
+        <div class="tag">Este mes</div>
       </div>
       <div class="card kpi">
-        <div class="label">Ingreso por Suscripciones</div>
-        <div class="value">S/ 6,847</div>
-        <div class="tag">Este mes</div>
+        <div class="label">Cantidad de Clientes</div>
+        <div class="value" style="color: var(--info);">342</div>
+        <div class="tag">Registrados</div>
       </div>
     </section>
 
     <section class="panel">
-      <h2>Variación de Ventas (Últimas 8 semanas)</h2>
+      <h2>Cantidad de Ventas (Últimas 8 semanas)</h2>
       <div class="chart-container">
         <svg viewBox="0 0 600 280" width="100%" height="280">
           <line x1="50" y1="240" x2="570" y2="240" stroke="var(--accent)" stroke-width="2" />
           <line x1="50" y1="40" x2="50" y2="240" stroke="var(--accent)" stroke-width="2" />
 
-          <text x="10" y="245" fill="var(--muted)" font-size="12">0%</text>
-          <text x="5" y="195" fill="var(--muted)" font-size="12">+5%</text>
-          <text x="0" y="145" fill="var(--muted)" font-size="12">+10%</text>
-          <text x="0" y="95" fill="var(--muted)" font-size="12">+15%</text>
-          <text x="0" y="45" fill="var(--muted)" font-size="12">+20%</text>
+          <text x="20" y="245" fill="var(--muted)" font-size="12">0</text>
+          <text x="10" y="195" fill="var(--muted)" font-size="12">30</text>
+          <text x="10" y="145" fill="var(--muted)" font-size="12">60</text>
+          <text x="10" y="95" fill="var(--muted)" font-size="12">90</text>
+          <text x="5" y="45" fill="var(--muted)" font-size="12">120</text>
 
           <line x1="50" y1="195" x2="570" y2="195" stroke="var(--muted)" stroke-width="1" opacity="0.2"
             stroke-dasharray="5,5" />
@@ -75,16 +75,16 @@
             stroke-dasharray="5,5" />
 
           <polyline fill="none" stroke="var(--ok)" stroke-width="3"
-            points="80,240 140,210 200,170 260,135 320,155 380,115 440,125 500,85" />
+            points="80,180 140,150 200,110 260,135 320,125 380,95 440,105 500,65" />
 
-          <circle cx="80" cy="240" r="5" fill="var(--ok)" />
-          <circle cx="140" cy="210" r="5" fill="var(--ok)" />
-          <circle cx="200" cy="170" r="5" fill="var(--ok)" />
+          <circle cx="80" cy="180" r="5" fill="var(--ok)" />
+          <circle cx="140" cy="150" r="5" fill="var(--ok)" />
+          <circle cx="200" cy="110" r="5" fill="var(--ok)" />
           <circle cx="260" cy="135" r="5" fill="var(--ok)" />
-          <circle cx="320" cy="155" r="5" fill="var(--ok)" />
-          <circle cx="380" cy="115" r="5" fill="var(--ok)" />
-          <circle cx="440" cy="125" r="5" fill="var(--ok)" />
-          <circle cx="500" cy="85" r="5" fill="var(--ok)" />
+          <circle cx="320" cy="125" r="5" fill="var(--ok)" />
+          <circle cx="380" cy="95" r="5" fill="var(--ok)" />
+          <circle cx="440" cy="105" r="5" fill="var(--ok)" />
+          <circle cx="500" cy="65" r="5" fill="var(--ok)" />
 
           <g fill="var(--muted)" font-size="11" text-anchor="middle">
             <text x="80" y="260">Sem 1</text>
@@ -101,17 +101,65 @@
     </section>
 
     <section class="panel">
-      <h2>Variación de Suscripciones (Últimos 8 meses)</h2>
+      <h2>Ingresos de Capital (Últimos 8 meses)</h2>
       <div class="chart-container">
         <svg viewBox="0 0 600 280" width="100%" height="280">
           <line x1="50" y1="240" x2="570" y2="240" stroke="var(--accent)" stroke-width="2" />
           <line x1="50" y1="40" x2="50" y2="240" stroke="var(--accent)" stroke-width="2" />
 
-          <text x="10" y="245" fill="var(--muted)" font-size="12">0%</text>
-          <text x="5" y="195" fill="var(--muted)" font-size="12">+3%</text>
-          <text x="5" y="145" fill="var(--muted)" font-size="12">+6%</text>
-          <text x="5" y="95" fill="var(--muted)" font-size="12">+9%</text>
-          <text x="0" y="45" fill="var(--muted)" font-size="12">+12%</text>
+          <text x="5"   y="245" fill="var(--muted)" font-size="11">S/0</text>
+          <text x="-0" y="195" fill="var(--muted)" font-size="10">S/5k</text>
+          <text x="-0" y="145" fill="var(--muted)" font-size="10">S/10k</text>
+          <text x="0" y="95" fill="var(--muted)" font-size="10">S/15k</text>
+          <text x="-0" y="45" fill="var(--muted)" font-size="10">S/20k</text>
+
+          <line x1="50" y1="195" x2="570" y2="195" stroke="var(--muted)" stroke-width="1" opacity="0.2"
+            stroke-dasharray="5,5" />
+          <line x1="50" y1="145" x2="570" y2="145" stroke="var(--muted)" stroke-width="1" opacity="0.2"
+            stroke-dasharray="5,5" />
+          <line x1="50" y1="95" x2="570" y2="95" stroke="var(--muted)" stroke-width="1" opacity="0.2"
+            stroke-dasharray="5,5" />
+          <line x1="50" y1="45" x2="570" y2="45" stroke="var(--muted)" stroke-width="1" opacity="0.2"
+            stroke-dasharray="5,5" />
+
+          <polyline fill="none" stroke="var(--warn)" stroke-width="3"
+            points="80,200 140,170 200,145 260,125 320,100 380,75 440,55 500,35" />
+
+          <circle cx="80" cy="200" r="5" fill="var(--warn)" />
+          <circle cx="140" cy="170" r="5" fill="var(--warn)" />
+          <circle cx="200" cy="145" r="5" fill="var(--warn)" />
+          <circle cx="260" cy="125" r="5" fill="var(--warn)" />
+          <circle cx="320" cy="100" r="5" fill="var(--warn)" />
+          <circle cx="380" cy="75" r="5" fill="var(--warn)" />
+          <circle cx="440" cy="55" r="5" fill="var(--warn)" />
+          <circle cx="500" cy="35" r="5" fill="var(--warn)" />
+
+          <g fill="var(--muted)" font-size="11" text-anchor="middle">
+            <text x="80"  y="260">Mes 1</text>
+            <text x="140" y="260">Mes 2</text>
+            <text x="200" y="260">Mes 3</text>
+            <text x="260" y="260">Mes 4</text>
+            <text x="320" y="260">Mes 5</text>
+            <text x="380" y="260">Mes 6</text>
+            <text x="440" y="260">Mes 7</text>
+            <text x="500" y="260">Mes 8</text>
+          </g>
+        </svg>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Cantidad de Clientes (Últimos 8 meses)</h2>
+      <div class="chart-container">
+        <svg viewBox="0 0 600 280" width="100%" height="280">
+          <line x1="50" y1="240" x2="570" y2="240" stroke="var(--accent)" stroke-width="2" />
+          <line x1="50" y1="40" x2="50" y2="240" stroke="var(--accent)" stroke-width="2" />
+
+          <text x="20" y="245" fill="var(--muted)" font-size="12">0</text>
+          <text x="10" y="195" fill="var(--muted)" font-size="12">50</text>
+          <text x="5" y="145" fill="var(--muted)" font-size="12">100</text>
+          <text x="5" y="95" fill="var(--muted)" font-size="12">150</text>
+          <text x="5" y="45" fill="var(--muted)" font-size="12">200</text>
 
           <line x1="50" y1="195" x2="570" y2="195" stroke="var(--muted)" stroke-width="1" opacity="0.2"
             stroke-dasharray="5,5" />
@@ -123,16 +171,16 @@
             stroke-dasharray="5,5" />
 
           <polyline fill="none" stroke="var(--info)" stroke-width="3"
-            points="80,240 140,225 200,215 260,200 320,175 380,155 440,125 500,95" />
+            points="80,220 140,200 200,180 260,155 320,130 380,110 440,85 500,65" />
 
-          <circle cx="80" cy="240" r="5" fill="var(--info)" />
-          <circle cx="140" cy="225" r="5" fill="var(--info)" />
-          <circle cx="200" cy="215" r="5" fill="var(--info)" />
-          <circle cx="260" cy="200" r="5" fill="var(--info)" />
-          <circle cx="320" cy="175" r="5" fill="var(--info)" />
-          <circle cx="380" cy="155" r="5" fill="var(--info)" />
-          <circle cx="440" cy="125" r="5" fill="var(--info)" />
-          <circle cx="500" cy="95" r="5" fill="var(--info)" />
+          <circle cx="80" cy="220" r="5" fill="var(--info)" />
+          <circle cx="140" cy="200" r="5" fill="var(--info)" />
+          <circle cx="200" cy="180" r="5" fill="var(--info)" />
+          <circle cx="260" cy="155" r="5" fill="var(--info)" />
+          <circle cx="320" cy="130" r="5" fill="var(--info)" />
+          <circle cx="380" cy="110" r="5" fill="var(--info)" />
+          <circle cx="440" cy="85" r="5" fill="var(--info)" />
+          <circle cx="500" cy="65" r="5" fill="var(--info)" />
 
           <g fill="var(--muted)" font-size="11" text-anchor="middle">
             <text x="80" y="260">Mes 1</text>
@@ -148,42 +196,9 @@
       </div>
     </section>
 
-    <section class="panel">
-      <h2>Distribución de Planes de Suscripción</h2>
-      <div class="chart-container">
-        <svg viewBox="0 0 600 320" width="100%" height="320">
-          <g transform="translate(300,160)">
-            <path d="M0,0 L0,-120 A120,120 0 0,1 103.92,-60 Z" fill="var(--info)" opacity="0.8"/>
-            <path d="M0,0 L103.92,-60 A120,120 0 0,1 -60,103.92 Z" fill="var(--ok)" opacity="0.8"/>
-            <path d="M0,0 L-60,103.92 A120,120 0 0,1 0,-120 Z" fill="var(--warn)" opacity="0.8"/>
-
-            <text x="40" y="-60" fill="white" font-size="14" font-weight="bold" text-anchor="middle">Básico</text>
-            <text x="40" y="-45" fill="white" font-size="12" text-anchor="middle">15%</text>
-
-            <text x="50" y="40" fill="white" font-size="14" font-weight="bold" text-anchor="middle">Premiun</text>
-            <text x="50" y="55" fill="white" font-size="12" text-anchor="middle">40%</text>
-
-            <text x="-60" y="0" fill="white" font-size="14" font-weight="bold" text-anchor="middle">VIP</text>
-            <text x="-60" y="15" fill="white" font-size="12" text-anchor="middle">45%</text>
-          </g>
-
-          <g transform="translate(100, 300)">
-            <rect x="0" y="0" width="15" height="15" fill="var(--info)" opacity="0.8" />
-            <text x="20" y="12" fill="var(--text)" font-size="12">Plan Básico (26 clientes)</text>
-
-            <rect x="180" y="0" width="15" height="15" fill="var(--ok)" opacity="0.8" />
-            <text x="200" y="12" fill="var(--text)" font-size="12">Plan Premium (78 clientes)</text>
-
-            <rect x="380" y="0" width="15" height="15" fill="var(--warn)" opacity="0.8" />
-            <text x="400" y="12" fill="var(--text)" font-size="12">Plan VIP (52 clientes)</text>
-          </g>
-        </svg>
-      </div>
-    </section>
-
   </main>
 
-  <footer>CalzaSmart • Sistema de Gestión de Suscripciones</footer>
+  <footer>CalzaSmart • Sistema de Gestión de Ventas</footer>
   <script src="main.js"></script>
 </body>
 
